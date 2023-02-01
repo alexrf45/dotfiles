@@ -35,6 +35,15 @@ alias s3-list="aws s3api list-buckets | jq -r '.Buckets[].Name'"
 alias vpc-check='aws ec2 --output text --query "Vpcs[*].{VpcId:VpcId,Name:Tags[?Key=='Environment'].Value|[0],CidrBlock:CidrBlock}" describe-vpcs'
 
 
+#docker
+alias dck='docker'
+alias dckils='docker image ls'
+alias dcki='docker image'
+alias dckc='docker container'
+alias dckp='dcoker ps'
+alias dckn='docker network'
+
+
 #docker compose
 alias dockup='docker-compose up -d'
 alias dockdown='docker-compose down'
