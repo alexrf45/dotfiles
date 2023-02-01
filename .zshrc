@@ -26,9 +26,8 @@ source "$HOME/.zsh/miniplug.zsh"
 # Define a plugin
 miniplug plugin 'zsh-users/zsh-syntax-highlighting'
 miniplug plugin 'zsh-users/zsh-autosuggestions'
-
+miniplug plugin 'jameshgrn/zshnotes'
 # Define a theme
 miniplug theme 'dracula/zsh'
-
 # Source plugins
 miniplug load
