@@ -5,7 +5,7 @@ alias update='sudo pacman -Syyu'
 alias i='sudo pacman -S'
 alias vim='nvim'
 #tmux
-alias t='tmux -f ~/.tmux.conf'
+alias t='tmux -f ~/.tmux.conf -s $1'
 
 #networking
 alias public='curl wtfismyip.com/text'
