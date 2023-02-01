@@ -1,0 +1,17 @@
+[user]
+	email = fonalex45@gmail.com
+	name = alexrf45
+	signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF1YvOHVmcCQgrvEJ+5n30X/Y4XBvUhdS/iday/OYJwe dev"
+
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
+[alias]
+	logs = log --show-signature
+[core]
+	editor = nvim
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = /home/r0land/.config/git/allowed_signers
