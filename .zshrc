@@ -31,3 +31,8 @@ miniplug plugin 'jameshgrn/zshnotes'
 miniplug theme 'dracula/zsh'
 # Source plugins
 miniplug load
+
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
+
+complete -C '/usr/local/bin/aws_completer' aws
