@@ -5,7 +5,7 @@ alias update='sudo pacman -Syyu'
 alias i='sudo pacman -S'
 alias vim='nvim'
 #tmux
-alias t='tmux -f ~/.tmux.conf -s $1'
+alias t='tmux new -f ~/.tmux.conf -s $1'
 
 #networking
 alias public='curl wtfismyip.com/text'
@@ -22,11 +22,18 @@ alias py='python3'
 #scripts
 alias terraform-project='~/.config/scripts/./terraform-skel.sh $1'
 alias dockershell='~/.config/scripts/./dockershell.sh'
+alias ec2-list='~/.config/scripts/./ec2list.sh'
+alias s3-create='python3 ~/.config/scripts/s3.py'
+alias aws-services-list='~/.config/scripts/./services.sh'
+alias tf-project='~/.config/scripts/./terraform-skel.sh'
+
+
 #terraform
 alias tf='terraform'
 alias tfa='terraform apply'
 alias tfp='terraform plan'
 alias tfs='terraform state'
+alias tfsls='terraform state list'
 alias tfo='terraform output'
 
 #aws cli aliases
