@@ -28,7 +28,9 @@ bindsym $mod+Return exec terminator
 # kill focused window
 bindsym $mod+q kill
 
-bindsym $mod+d exec rofi -lines 6 -padding 18 -width 40 -location 0 -show drun -sidebar-mode -columns 2 -font 'Noto Sans 12'
+bindsym $mod+d exec rofi -config "~/.config/rofi/config.rasi" -show drun
+
+#bindsym $mod+d exec rofi -lines 6 -padding 18 -width 40 -location 0 -show drun -sidebar-mode -columns 2 -font 'Noto Sans 12'
 
 
 # change focus
