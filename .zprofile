@@ -1,6 +1,9 @@
 export MINIPLUG_HOME="$HOME/.zsh/plugins"
 
-export PATH=$PATH:/usr/local/bin:/home/r0land/.local/bin:/home/r0land/go/bin:/usr/local/go/bin
+
+if [[ -z $TMUX ]]; then
+  PATH="$PATH:/home/r0land/.local/bin:/home/r0land/go/bin:/usr/local/go/bin"
+fi
 
 export EDITOR=nvim
  

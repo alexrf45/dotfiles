@@ -31,6 +31,7 @@ alias tf-project='~/.config/scripts/./terraform-skel.sh'
 #terraform
 alias tf='terraform'
 alias tfa='terraform apply'
+alias tfv='terraform validate'
 alias tfp='terraform plan'
 alias tfs='terraform state'
 alias tfsls='terraform state list'
