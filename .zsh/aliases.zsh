@@ -44,12 +44,12 @@ alias vpc-check='aws ec2 --output text --query "Vpcs[*].{VpcId:VpcId,Name:Tags[?
 
 
 #docker
-alias dck='docker'
-alias dckils='docker image ls'
-alias dcki='docker image'
-alias dckc='docker container'
-alias dckp='dcoker ps'
-alias dckn='docker network'
+alias d='docker'
+alias dimls='docker image ls'
+alias dim='docker image'
+alias dct='docker container'
+alias dps='docker ps'
+alias dnt='docker network'
 
 
 #docker compose
