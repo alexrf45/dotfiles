@@ -15,7 +15,7 @@ set background=dark
 call plug#begin()
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'sainnhe/everforest'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
@@ -26,9 +26,9 @@ Plug 'EtiamNullam/deferred-clipboard.nvim'
 Plug 'folke/trouble.nvim'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'hashivim/vim-terraform'
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
 call plug#end()
-
 
 lua << EOF
   require("trouble").setup {
@@ -36,13 +36,10 @@ lua << EOF
     -- or leave it empty to use the default settings
     -- refer to the configuration section below
   }
+	require("toggleterm").setup()
 EOF
 
-let g:lightline = {'colorscheme': 'everforest'}
-let g:everforest_background = 'soft'
-let g:everforest_better_performance = 1
-
-colorscheme everforest
+colorscheme catppuccin
 
 inoremap <silent><expr> <Tab>
       \ coc#pum#visible() ? coc#pum#next(1) :
