@@ -26,6 +26,7 @@ cowsay $(fortune)
 eval $(ssh-agent) > /dev/null
 
 ssh-add ~/.ssh/dev > /dev/null
+ssh-add ~/.ssh/homelab > /dev/null 
 
 #history log function
     precmd() { eval 'if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history -f)" >> ~/.logs/zsh-history-$(date "+%Y-%m-%d").log; fi' }

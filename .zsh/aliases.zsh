@@ -4,6 +4,8 @@ alias reload='. ~/.zshrc'
 alias update='sudo pacman -Syyu'
 alias i='sudo pacman -S'
 alias vim='nvim'
+alias tree-overview='tree -D -L 2'
+
 #tmux
 alias t='tmux new -f ~/.tmux.conf -s $1'
 
@@ -12,7 +14,7 @@ alias public='curl wtfismyip.com/text'
 
 #aws-vault
 alias awsv='aws-vault exec Administrator'
-alias awsv-acct-admin='aws-vault exec account-admin'
+alias awsv-acct-admin='aws-vault exec account-admin --duration=2h'
 
 #python
 alias py='python3'
