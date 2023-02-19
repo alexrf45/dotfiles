@@ -28,7 +28,7 @@ alias ec2-list='~/.config/scripts/./ec2list.sh'
 alias s3-create='python3 ~/.config/scripts/s3.py'
 alias aws-services-list='~/.config/scripts/./services.sh'
 alias tf-project='~/.config/scripts/./terraform-skel.sh'
-
+alias s3-backend-delete='~/.config/scripts/./s3-backend-delete.sh'
 
 #terraform
 alias tf='terraform'
@@ -38,12 +38,15 @@ alias tfp='terraform plan'
 alias tfs='terraform state'
 alias tfsls='terraform state list'
 alias tfo='terraform output'
+alias tfinit='terraform init'
+alias tfd='terraform destroy'
+alias tff='terraform fmt'
 
 #aws cli aliases
 alias ec2-check='aws ec2 describe-instances --query "Reservations[*].Instances[*].{PublicIP:PublicIpAddress,PrivateIP:PrivateIpAddress,Name:Tags[?Key=='Name']|[0].Value,Type:InstanceType,Status:State.Name,VpcId:VpcId,Id:InstanceId}" --filters "Name=instance-state-name,Values=running" --output table'
 alias s3-list="aws s3api list-buckets | jq -r '.Buckets[].Name'"
 alias vpc-check='aws ec2 --output text --query "Vpcs[*].{VpcId:VpcId,Name:Tags[?Key=='Environment'].Value|[0],CidrBlock:CidrBlock}" describe-vpcs'
-
+alias s3-delete='aws s3api delete-bucket --bucket ${BUCKET}'
 
 #docker
 alias d='docker'
