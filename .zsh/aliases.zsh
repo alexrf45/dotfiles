@@ -21,7 +21,12 @@ alias py='python3'
 
 #ssh
 
+#tor
+alias tor='docker run --rm --detach --name tor --publish 9050:9050 tor:test'
+
+
 #scripts
+alias arch-mirror='~/.config/scripts/./arch-mirror.sh'
 alias terraform-project='~/.config/scripts/./terraform-skel.sh $1'
 alias dockershell='~/.config/scripts/./dockershell.sh'
 alias ec2-list='~/.config/scripts/./ec2list.sh'
@@ -47,6 +52,10 @@ alias ec2-check='aws ec2 describe-instances --query "Reservations[*].Instances[*
 alias s3-list="aws s3api list-buckets | jq -r '.Buckets[].Name'"
 alias vpc-check='aws ec2 --output text --query "Vpcs[*].{VpcId:VpcId,Name:Tags[?Key=='Environment'].Value|[0],CidrBlock:CidrBlock}" describe-vpcs'
 alias s3-delete='aws s3api delete-bucket --bucket ${BUCKET}'
+
+#cloud-nuke aws
+alias aws-nuke='cloud-nuke aws --exclude-resource-type s3 --exclude-resource-type iam --exclude-resource-type secretsmanager --exclude-resource-type dynamodb'
+alias aws-nuke-view-us-east-1='cloud-nuke inspect-aws --region us-east-1'
 
 #docker
 alias d='docker'
