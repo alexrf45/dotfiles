@@ -2,7 +2,7 @@ export MINIPLUG_HOME="$HOME/.zsh/plugins"
 
 
 if [[ -z $TMUX ]]; then
-  PATH="$PATH:/home/r0land/.local/bin:/home/r0land/go/bin:/usr/local/go/bin"
+  PATH="$PATH:/home/r0land/.local/bin:/home/r0land/go/bin:/usr/local/go/bin:/home/r0land/.local/share/gem/ruby/3.0.0/bin"
 fi
 
 export EDITOR=nvim
