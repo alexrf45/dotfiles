@@ -58,17 +58,17 @@ alias aws-nuke='cloud-nuke aws --exclude-resource-type s3 --exclude-resource-typ
 alias aws-nuke-view-us-east-1='cloud-nuke inspect-aws --region us-east-1'
 
 #docker
-alias d='docker'
-alias dimls='docker image ls'
-alias dim='docker image'
-alias dct='docker container'
-alias dps='docker ps'
-alias dnt='docker network'
+alias dock='docker'
+alias dockimls='docker image ls'
+alias dockim='docker image'
+alias dockc='docker container'
+alias dockps='docker ps'
+alias docknt='docker network'
 
 
 #docker compose
-alias dockup='docker-compose up -d'
-alias dockdown='docker-compose down'
+alias dock-up='docker-compose up -d'
+alias dock-down='docker-compose down'
 
 
 alias config='/usr/bin/git --git-dir=/home/r0land/.cfg/ --work-tree=/home/r0land'

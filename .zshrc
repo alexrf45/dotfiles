@@ -20,14 +20,15 @@ source "$HOME/.zsh/aliases.zsh"
 fpath=(/tmp/zsh-completions/src $fpath)
 
 #displays saying in every new prompt
-cowsay $(fortune)
+figlet r0land | lolcat
+
 
 #persistant ssh agent
-eval $(ssh-agent) > /dev/null
+eval $(ssh-agent) &> /dev/null
 
-ssh-add ~/.ssh/dev > /dev/null
-ssh-add ~/.ssh/homelab > /dev/null
-ssh-add ~/.ssh/homeadm > /dev/null
+ssh-add ~/.ssh/dev &> /dev/null
+ssh-add ~/.ssh/homelab &> /dev/null
+ssh-add ~/.ssh/homeadm &> /dev/null
 
 #history log function
     precmd() { eval 'if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history -f)" >> ~/.logs/zsh-history-$(date "+%Y-%m-%d").log; fi' }
