@@ -32,6 +32,8 @@ alias dockershell='~/.config/scripts/./dockershell.sh'
 alias ec2-list='~/.config/scripts/./ec2list.sh'
 alias s3-create='python3 ~/.config/scripts/s3.py'
 alias aws-services-list='~/.config/scripts/./services.sh'
+alias aws-current-cost='~/.config/scripts/awscurrentcost.sh'
+alias aws-cost-overall='~/.config/scripts/awscost.sh'
 alias tf-project='~/.config/scripts/./terraform-skel.sh'
 alias s3-backend-delete='~/.config/scripts/./s3-backend-delete.sh'
 
@@ -46,6 +48,21 @@ alias tfo='terraform output'
 alias tfinit='terraform init'
 alias tfd='terraform destroy'
 alias tff='terraform fmt'
+
+#kubernetes
+alias k='kubectl'
+alias kconfigview='kubectl config view'
+alias kgn='kubectl get nodes'
+alias kgp='kubectl get pods'
+alias kgpa='kubectl get pods -A'
+alias kgd='kubectl get deployment'
+alias kgs='kubectl get services'
+alias ka='kubectl apply'
+alias kev='kubectl get events --sort-by=.metadata.creationTimestamp'
+alias kd='kubectl delete'
+alias kscale='kubectl scale --replicas=$1'
+alias kcontext='kubectl config get-contexts'
+alias kusers="kubectl config view -o jsonpath='{.users[*].name}'"
 
 #aws cli aliases
 alias ec2-check='aws ec2 describe-instances --query "Reservations[*].Instances[*].{PublicIP:PublicIpAddress,PrivateIP:PrivateIpAddress,Name:Tags[?Key=='Name']|[0].Value,Type:InstanceType,Status:State.Name,VpcId:VpcId,Id:InstanceId}" --filters "Name=instance-state-name,Values=running" --output table'

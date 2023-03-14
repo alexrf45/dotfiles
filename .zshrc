@@ -16,7 +16,7 @@ bindkey -v
 #source aliases and env
 source "$HOME/.zprofile"
 source "$HOME/.zsh/aliases.zsh"
-
+source "$HOME/.config/scripts/kubeconf.sh"
 fpath=(/tmp/zsh-completions/src $fpath)
 
 #displays saying in every new prompt
