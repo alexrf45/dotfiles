@@ -16,3 +16,9 @@ windows:
     layout: tiled
     panes:
       - ncspot
+  - window_name: local
+    layout: tiled
+    panes:
+      - neofetch
+      -
+
