@@ -12,6 +12,11 @@ HISTSIZE=100000
 SAVEHIST=100000
 HIST_STAMPS="mm/dd/yyyy"
 
+#history log function
+    precmd() { eval 'if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history -f)" >> ~/.logs/zsh-history-$(date "+%Y-%m-%d").log; fi' }
+
+alias clear-history='cp $HOME/.zsh_history $HOME/projects/configs/.history_backup && truncate -s 0 $HOME/.zsh_history'
+
 #source aliases and env
 source "$HOME/.zprofile"
 
@@ -26,6 +31,18 @@ source "$HOME/.miniplug/plugins/miniplug.zsh"
 
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
+autoload -Uz vcs_info
+
+zstyle ':vcs_info:git*' formats " %F{blue}%b%f %m%u%c %a "
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' stagedstr ' %F{green}✚%f'
+zstyle ':vcs_info:*' unstagedstr ' %F{red}●%f'
+
+precmd() {
+    vcs_info
+    print -P '%B%~%b ${vcs_info_msg_0_} $AWS_VAULT'
+}
 
 #ssh agent
 eval $(ssh-agent -s) &> /dev/null
@@ -43,6 +60,9 @@ miniplug plugin 'zsh-users/zsh-autosuggestions'
 miniplug plugin 'zsh-users/zsh-completions'
 miniplug load
 
+source "/home/linuxbrew/.linuxbrew/opt/kube-ps1/share/kube-ps1.sh"
+PS1=' $(kube_ps1) $ '
+  #$PS1
 
 # complete -C "/usr/local/bin/aws_completer" aws
 
@@ -54,5 +74,8 @@ eval "$(fzf --zsh)"
 . <(flux completion zsh)
 
 eval "$(zoxide init zsh)"
-eval "$(direnv hook zsh)"
-eval "$(starship init zsh)"
+#eval "$(direnv hook zsh)"
+#eval "$(starship init zsh)"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+source <(switcher init zsh)

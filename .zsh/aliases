@@ -65,6 +65,7 @@ alias gla='gl --all'
 alias k9s='docker run --rm --net=host -it -v $KUBECONFIG:/root/.kube/config quay.io/derailed/k9s:v0.40.0'
 alias yeskube="sed -i '/^\[kubernetes\]$/,/^\[/{s/^disabled = true/disabled = false/;}' ~/.config/starship.toml"
 alias nokube="sed -i '/^\[kubernetes\]$/,/^\[/{s/^disabled = false/disabled = true/;}' ~/.config/starship.toml"
+alias s='switch'
 alias context='kubectx'
 alias shell='kubectl run tmp-shell --rm -i --tty --image nicolaka/netshoot -- /bin/bash'
 alias cluster='kubectl config get-clusters'
