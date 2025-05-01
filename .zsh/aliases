@@ -1,15 +1,15 @@
 #alias :r='. ~/.zshrc'
 alias :r='exec zsh'
 alias clean-up='paccache -r'
-alias update='sudo pacman -Syyu'
-alias i='sudo pacman -S'
+alias update='sudo apt update && sudo apt upgrade -y'
+alias i='sudo apt install'
 alias h='cd ~'
 alias v='nvim'
 alias edit='nvim'
 alias c="clear"
 alias get="curl -O -L"
 alias dir='exa'
-alias cat='bat'
+#alias cat='bat'
 alias t='tmux'
 alias py='python3'
 alias weather='curl https://wttr.in'
@@ -17,19 +17,12 @@ alias public='curl wtfismyip.com/text'
 alias q='exit'
 alias pdf='zathura'
 alias download='aria2c'
-#alias tailscale='docker run -d --name=tailscaled -v /var/lib:/var/lib -v /dev/net/tun:/dev/net/tun --network=host --cap-add=NET_ADMIN --cap-add=NET_RAW tailscale/tailscale'
-#alias tailup='docker start tailscaled'
-#alias taildown='docker stop tailscaled'
-#alias taillogin='docker exec tailscaled tailscale --socket /tmp/tailscaled.sock status'
 
 alias blog='scp ~/pico/blog/* prose.sh:/'
 
 #note backup
 alias brain-backup='aws s3 sync --delete ~/sean/. s3://notes-backup-primary'
 
-#argo repos
-alias prod='cd ~/projects/prod-argo/'
-alias dev='cd ~/projects/dev-argo/'
 alias homelab='cd ~/home-lab/'
 
 # git
@@ -65,7 +58,6 @@ alias gla='gl --all'
 alias k9s='docker run --rm --net=host -it -v $KUBECONFIG:/root/.kube/config quay.io/derailed/k9s:v0.40.0'
 alias yeskube="sed -i '/^\[kubernetes\]$/,/^\[/{s/^disabled = true/disabled = false/;}' ~/.config/starship.toml"
 alias nokube="sed -i '/^\[kubernetes\]$/,/^\[/{s/^disabled = false/disabled = true/;}' ~/.config/starship.toml"
-alias s='switch'
 alias context='kubectx'
 alias shell='kubectl run tmp-shell --rm -i --tty --image nicolaka/netshoot -- /bin/bash'
 alias cluster='kubectl config get-clusters'

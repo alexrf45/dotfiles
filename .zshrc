@@ -31,18 +31,7 @@ source "$HOME/.miniplug/plugins/miniplug.zsh"
 
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
-#autoload -Uz vcs_info
 
-# zstyle ':vcs_info:git*' formats " %F{blue}%b%f %m%u%c %a "
-# zstyle ':vcs_info:*' enable git
-# zstyle ':vcs_info:*' check-for-changes true
-# zstyle ':vcs_info:*' stagedstr ' %F{green}✚%f'
-# zstyle ':vcs_info:*' unstagedstr ' %F{red}●%f'
-#
-# precmd() {
-  #  vcs_info
-   # print -P '%B%~%b ${vcs_info_msg_0_} $AWS_VAULT'
-#}
 
 #ssh agent
 eval $(ssh-agent -s) &> /dev/null
@@ -60,11 +49,6 @@ miniplug plugin 'zsh-users/zsh-autosuggestions'
 miniplug plugin 'zsh-users/zsh-completions'
 miniplug load
 
-#source "/home/linuxbrew/.linuxbrew/opt/kube-ps1/share/kube-ps1.sh"
-#PS1=' $(kube_ps1) $ '
-  #$PS1
-
-
 . "$HOME/.cargo/env"
 
 eval "$(fzf --zsh)"
@@ -72,9 +56,5 @@ eval "$(fzf --zsh)"
 
 . <(flux completion zsh)
 
-eval "$(zoxide init zsh)"
 #eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-#source <(switcher init zsh)
