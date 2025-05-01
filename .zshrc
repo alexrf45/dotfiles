@@ -33,13 +33,13 @@ autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 
 
-#ssh agent
-eval $(ssh-agent -s) &> /dev/null
-
-ssh-add ~/.ssh/fr3d >/dev/null 2>&1
-ssh-add ~/.ssh/lab >/dev/null 2>&1
-ssh-add ~/.ssh/home >/dev/null 2>&1
-ssh-add ~/.ssh/vps >/dev/null 2>&1
+# #ssh agent
+# eval $(ssh-agent -s) &> /dev/null
+#
+# ssh-add ~/.ssh/fr3d >/dev/null 2>&1
+# ssh-add ~/.ssh/lab >/dev/null 2>&1
+# ssh-add ~/.ssh/home >/dev/null 2>&1
+# ssh-add ~/.ssh/vps >/dev/null 2>&1
 
 
 export MINIPLUG_HOME="$HOME/.miniplug/plugins"
