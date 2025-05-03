@@ -1,9 +1,5 @@
 session_name: dev
 windows:
-  - window_name: notes
-    layout: tiled
-    panes:
-      - cd ~/sean && v
   - window_name: home-ops
     layout: tiled
     panes:
