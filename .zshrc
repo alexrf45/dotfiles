@@ -32,6 +32,7 @@ source "$HOME/.miniplug/plugins/miniplug.zsh"
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 
+source <(kubectl completion zsh)
 
 # #ssh agent
 # eval $(ssh-agent -s) &> /dev/null
