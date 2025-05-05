@@ -21,7 +21,7 @@ return {
     workspaces = {
       {
         name = "personal",
-        path = "/home/fr3d/sean",
+        path = "/home/fr3d/notes/notes-vault",
       },
     },
 
