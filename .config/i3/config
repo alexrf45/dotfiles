@@ -155,7 +155,7 @@ bar {
         font pango:RobotoMono Nerd Font Regular 7.5
         colors {
             statusline #EEEEEE
-            background #000000
+            background #32302f
             focused_workspace #a9b665 #282A3E88 #a9b665
             statusline #E6FFF5
         }
