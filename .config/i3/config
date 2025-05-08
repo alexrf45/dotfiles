@@ -2,7 +2,7 @@ set $mod mod4
 
 font pango:JetBrains Mono  10
 
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -i $HOME/.config/pictures/space.jpg --nofork
+bindsym $mod+Shift+e exec --no-startup-id i3lock -i $HOME/.config/pictures/gruvbox_outside.png --nofork
 
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pipewire set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -170,7 +170,7 @@ gaps outer 2
 
 exec_always --no-startup-id vmware-user
 
-exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/skull.jpg
+exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/gruvbear.jpeg
 
 exec --no-startup-id i3-msg 'workspace 1; exec alacritty'
 
