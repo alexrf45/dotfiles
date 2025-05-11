@@ -151,13 +151,12 @@ bar {
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
         i3bar_command i3bar -t
         position top
-        height 24
-        font pango:RobotoMono Nerd Font Regular 7.5
+        height 28
+        font pango:RobotoMono Nerd Font Regular 10
         colors {
             statusline #EEEEEE
             background #32302f
-            focused_workspace #a9b665 #282A3E88 #a9b665
-            statusline #E6FFF5
+            focused_workspace #ddc7a1 #282A3E88 #7daea2
         }
 }
 
@@ -170,7 +169,7 @@ gaps outer 2
 
 exec_always --no-startup-id vmware-user
 
-exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/gruvbear.jpeg
+exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/gruv-city.png
 
 exec --no-startup-id i3-msg 'workspace 1; exec alacritty'
 
