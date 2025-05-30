@@ -169,6 +169,8 @@ gaps outer 2
 
 exec_always --no-startup-id vmware-user
 
+exec_always --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --left-of eDP-1
+
 exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/kali-2.0.png
 
 exec --no-startup-id i3-msg 'workspace 1; exec alacritty'
