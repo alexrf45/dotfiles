@@ -1,9 +1,8 @@
 return {
-  "rose-pine/neovim",
-  name = "rose-pine",
+  "RRethy/base16-nvim",
   lazy = false,
   priority = 1000,
   config = function()
-    vim.cmd.colorscheme("rose-pine")
+    vim.cmd.colorscheme("base16-gruvbox-material-dark-soft")
   end,
 }

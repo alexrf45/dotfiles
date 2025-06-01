@@ -121,7 +121,7 @@ mods = "Shift"
 
 [general]
 import = [
-    "~/.config/alacritty/rose-pine.toml" ]
+    "~/.config/alacritty/gruv-soft.toml" ]
 
     [terminal]
 

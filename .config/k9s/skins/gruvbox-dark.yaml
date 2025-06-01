@@ -5,9 +5,9 @@
 
 # Styles...
 foreground: &foreground "#ddc7a1"
-background: &background "#202020"
-current_line: &current_line "#ebdbb2"
-selection: &selection "#3c3735"
+background: &background "#32302f"
+current_line: &current_line "#ddc7a1"
+selection: &selection "#ddc7a1"
 comment: &comment "#bdad93"
 cyan: &cyan "#689d69"
 green: &green "#989719"
@@ -81,7 +81,7 @@ k9s:
     table:
       fgColor: *foreground
       bgColor: *background
-      cursorFgColor: *foreground
+      cursorFgColor: *green
       cursorBgColor: *cyan
       header:
         fgColor: *foreground
