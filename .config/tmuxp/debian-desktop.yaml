@@ -15,5 +15,5 @@ windows:
   - window_name: local
     layout: tiled
     panes:
-      -
+      - calendar
 
