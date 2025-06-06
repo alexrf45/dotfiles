@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Path=/home/fr3d/.local/bin
+Exec= ./mGBA
+Name=mGBA
+Icon=mGBA
+Keywords=application-launcher;games;
