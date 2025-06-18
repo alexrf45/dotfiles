@@ -18,7 +18,7 @@ alias q='exit'
 alias pdf='zathura'
 alias download='aria2c'
 alias htb='sudo openvpn ~/.config/openvpn/htb.ovpn'
-alias vpn='sudo openvpn ~/.config/openvpn/us.protonvpn.udp.ovpn'
+alias vpn='sudo openvpn ~/.config/openvpn/us-ny-599.protonvpn.udp.ovpn'
 alias blog='scp ~/pico/blog/* prose.sh:/'
 
 #note backup

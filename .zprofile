@@ -19,7 +19,7 @@ export VISUAL=vim
 #kubeconfig
 export KUBECONFIG="$HOME/.kube/config"
 #export KUBECONFIG="$HOME/.kube/stag-config"
-
+export KUBECTL_KUBERC=true
 ## FZF
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --color=fg:-1,fg+:#d0d0d0,bg:-1,bg+:#262626
