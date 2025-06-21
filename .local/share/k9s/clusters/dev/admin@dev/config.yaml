@@ -1,0 +1,16 @@
+k9s:
+  cluster: dev
+  skin: transparent
+  namespace:
+    active: all
+    lockFavorites: false
+    favorites:
+      - default
+      - all
+      - networking
+      - storage
+  view:
+    active: pods
+  featureGates:
+    nodeShell: false
+  proxy: null

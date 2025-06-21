@@ -1,0 +1,16 @@
+k9s:
+  cluster: prod
+  skin: gruvbox-material-dark-soft
+  namespace:
+    active: all
+    lockFavorites: true
+    favorites:
+      - blog
+      - default
+      - all
+      - networking
+  view:
+    active: pods
+  featureGates:
+    nodeShell: false
+  proxy: null

@@ -151,11 +151,11 @@ bar {
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
         i3bar_command i3bar -t
         position bottom
-        height 30
+        height 24
         font pango:JetBrains Mono NL Bold 12
         colors {
             statusline #EEEEEE
-            background #000000
+            background #32302f
             focused_workspace #e0def4 #282A3E88 #f6c177
         }
 }
@@ -171,7 +171,7 @@ exec_always --no-startup-id vmware-user
 
 exec_always --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --left-of eDP-1
 
-exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/skull.jpg
+exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/gruvbear.jpeg
 
 exec --no-startup-id i3-msg 'workspace 1; exec alacritty'
 

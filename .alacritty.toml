@@ -121,7 +121,7 @@ mods = "Shift"
 
 [general]
 import = [
-    "~/.config/alacritty/venom.toml" ]
+    "~/.config/alacritty/gruv-soft.toml" ]
 
     [terminal]
 
