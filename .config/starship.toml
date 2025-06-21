@@ -86,8 +86,19 @@ disabled = false
 format = " [🔧 $version]($style) "
 
 [kubernetes]
-format = '[k8s: ($cluster in )$context \($namespace\)](dimmed white) '
+format = '[k8s: $context \($namespace\)]($style) '
 disabled = false
+style = "bold green"
+
+[[kubernetes.contexts]]
+context_pattern = "^admin@prod$"
+context_alias = "prod"
+style = "red"
+
+[[kubernetes.contexts]]
+context_pattern = "^admin@dev$"
+context_alias = "dev"
+style = "yellow"
 
 [azure]
 disabled = false
