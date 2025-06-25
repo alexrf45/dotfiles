@@ -5,12 +5,13 @@ k9s:
     active: all
     lockFavorites: false
     favorites:
+      - wallabag
       - default
       - all
       - networking
       - storage
   view:
-    active: v1/pods
+    active: ingress
   featureGates:
     nodeShell: false
   proxy: null
