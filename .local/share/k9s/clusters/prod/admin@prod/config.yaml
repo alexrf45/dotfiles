@@ -2,7 +2,7 @@ k9s:
   cluster: prod
   skin: gruvbox-material-dark-soft
   namespace:
-    active: all
+    active: default
     lockFavorites: true
     favorites:
       - blog

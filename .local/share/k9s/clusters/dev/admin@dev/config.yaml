@@ -2,16 +2,17 @@ k9s:
   cluster: dev
   skin: transparent
   namespace:
-    active: all
+    active: default
     lockFavorites: false
     favorites:
+      - flux-system
       - wallabag
       - default
       - all
       - networking
       - storage
   view:
-    active: ingress
+    active: v1/pods
   featureGates:
     nodeShell: false
   proxy: null

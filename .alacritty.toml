@@ -121,7 +121,7 @@ mods = "Shift"
 
 [general]
 import = [
-    "~/.config/alacritty/oxycarbon.toml" ]
+    "~/.config/alacritty/htb.toml" ]
 
     [terminal]
 
