@@ -121,7 +121,7 @@ mods = "Shift"
 
 [general]
 import = [
-    "~/.config/alacritty/htb.toml" ]
+    "~/.config/alacritty/mellow.toml" ]
 
     [terminal]
 

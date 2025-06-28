@@ -1,8 +1,8 @@
 k9s:
   cluster: prod
-  skin: gruvbox-material-dark-soft
+  skin: monokai-prod
   namespace:
-    active: default
+    active: all
     lockFavorites: true
     favorites:
       - blog
@@ -10,7 +10,7 @@ k9s:
       - all
       - networking
   view:
-    active: context
+    active: ingress
   featureGates:
     nodeShell: false
   proxy: null

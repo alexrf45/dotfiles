@@ -1,10 +1,11 @@
 k9s:
   cluster: dev
-  skin: transparent
+  skin: monokai
   namespace:
     active: default
     lockFavorites: false
     favorites:
+      - cert-manager
       - flux-system
       - wallabag
       - default
