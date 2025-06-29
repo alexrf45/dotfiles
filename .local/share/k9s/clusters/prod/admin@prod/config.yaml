@@ -1,8 +1,8 @@
 k9s:
   cluster: prod
-  skin: monokai-prod
+  skin: transparent
   namespace:
-    active: all
+    active: default
     lockFavorites: true
     favorites:
       - blog
@@ -10,7 +10,7 @@ k9s:
       - all
       - networking
   view:
-    active: ingress
+    active: v1/pods
   featureGates:
     nodeShell: false
   proxy: null

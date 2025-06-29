@@ -1,10 +1,11 @@
 k9s:
   cluster: dev
-  skin: monokai
+  skin: everforest
   namespace:
-    active: default
+    active: all
     lockFavorites: false
     favorites:
+      - homepage
       - cert-manager
       - flux-system
       - wallabag
@@ -13,7 +14,7 @@ k9s:
       - networking
       - storage
   view:
-    active: v1/pods
+    active: context
   featureGates:
     nodeShell: false
   proxy: null

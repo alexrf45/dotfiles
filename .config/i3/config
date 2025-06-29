@@ -155,7 +155,7 @@ bar {
         font pango:JetBrains Mono NL Bold 12
         colors {
             statusline #EEEEEE
-            background #2b2b2b
+            background #000000
             focused_workspace #e0def4 #282A3E88 #f6c177
         }
 }

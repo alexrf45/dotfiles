@@ -2,7 +2,7 @@
 
 sudo apt-get update && sudo apt-get upgrade -y
 
-sudo apt-get install -y tmux zsh terminator rofi i3 i3blocks i3status lxappearance python3-pip picom papirus-icon-theme imagemagick 
+sudo apt-get install -y tmux zsh terminator rofi i3 i3blocks i3status lxappearance python3-pip picom papirus-icon-theme imagemagick
 
 sudo apt-get install -y fonts-roboto man-db vim-gtk3 flameshot thunar docker.io docker-compose neovim pass fonts-jetbrains-mono
 

@@ -121,7 +121,7 @@ mods = "Shift"
 
 [general]
 import = [
-    "~/.config/alacritty/mellow.toml" ]
+    "~/.config/alacritty/rose.toml" ]
 
     [terminal]
 

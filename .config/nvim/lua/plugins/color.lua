@@ -1,8 +1,16 @@
+-- Using lazy.nvim
 return {
-  "mellow-theme/mellow.nvim",
+  "cdmill/neomodern.nvim",
   lazy = false,
   priority = 1000,
   config = function()
-    vim.cmd.colorscheme("mellow")
+    require("neomodern").setup({
+      theme = "roseprime",
+      variant = "dark",
+      alt_bg = true,
+
+      -- optional configuration here
+    })
+    require("neomodern").load()
   end,
 }
