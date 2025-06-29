@@ -152,10 +152,10 @@ bar {
         i3bar_command i3bar -t
         position bottom
         height 24
-        font pango:JetBrains Mono NL Bold 12
+        font pango:Iosevka Nerd Font Mono 12
         colors {
             statusline #EEEEEE
-            background #000000
+            background #111111
             focused_workspace #e0def4 #282A3E88 #f6c177
         }
 }
