@@ -7,7 +7,7 @@ return {
     require("neomodern").setup({
       theme = "roseprime",
       variant = "dark",
-      alt_bg = false,
+      alt_bg = true,
 
       -- optional configuration here
     })
