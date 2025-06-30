@@ -173,7 +173,7 @@ repeat = 'off'
 # cmdline_bg = "black"
 # Monokai
 [theme]
-background = "#2b2b2b"
+background = "#111111"
 primary = "#ffffff"
 secondary = "#e6e6e6"
 title = "#ffff87"
