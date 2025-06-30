@@ -147,18 +147,18 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# bar {
-#     status_command i3blocks -c ~/.config/i3/i3blocks.conf
-#         i3bar_command i3bar -t
-#         position bottom
-#         height 24
-#         font pango:Iosevka Nerd Font Mono 12
-#         colors {
-#             statusline #EEEEEE
-#             background #111111
-#             focused_workspace #e0def4 #282A3E88 #f6c177
-#         }
-# }
+bar {
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
+        i3bar_command i3bar -t
+        position top
+        height 24
+        font pango:Iosevka Nerd Font Mono 12
+        colors {
+            statusline #EEEEEE
+            background #1f1f28
+            focused_workspace #e0def4 #282A3E88 #f6c177
+        }
+}
 
 
 # i3-gaps
