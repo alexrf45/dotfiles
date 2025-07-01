@@ -1,7 +1,6 @@
 #alias :r='. ~/.zshrc'
 alias :r='exec zsh'
-alias clean-up='paccache -r'
-alias update='sudo apt update && sudo apt upgrade -y'
+alias u='sudo apt update && sudo apt upgrade -y'
 alias i='sudo apt install'
 alias h='cd ~'
 alias v='nvim'
