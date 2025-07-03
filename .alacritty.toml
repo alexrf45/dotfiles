@@ -23,9 +23,11 @@ history = 20000
 
 [font]
 
-normal = { family="Nimbus Mono PS " , style = "Bold"}
+#normal = { family="Nimbus Mono PS " , style = "Bold"}
 #normal = { family="JetBrains Mono" , style = "Bold"}
 #normal = { family="Monospace", style = "" }
+normal = { family="FreeMono", style = "" }
+
 size = 11
 
 [selection]

@@ -18,7 +18,6 @@ export VISUAL=vim
 
 #kubeconfig
 export KUBECONFIG="$HOME/.kube/config"
-#export KUBECONFIG="$HOME/.kube/stag-config"
 export KUBECTL_KUBERC=true
 ## FZF
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
