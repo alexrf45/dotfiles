@@ -123,7 +123,7 @@ mods = "Shift"
 
 [general]
 import = [
-    "~/.config/alacritty/vague.toml" ]
+    "~/.config/alacritty/dracula.toml" ]
 
     [terminal]
 
