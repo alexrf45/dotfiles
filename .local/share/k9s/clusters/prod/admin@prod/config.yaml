@@ -1,6 +1,6 @@
 k9s:
   cluster: prod
-  skin: transparent
+  skin: gruvbox-material-dark-hard
   namespace:
     active: all
     lockFavorites: true
@@ -10,7 +10,7 @@ k9s:
       - all
       - networking
   view:
-    active: nodes
+    active: pods
   featureGates:
     nodeShell: false
   proxy: null

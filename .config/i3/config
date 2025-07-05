@@ -151,11 +151,11 @@ bar {
         i3bar_command i3bar -t
         position top
         height 25
-        font pango:Nimbus Mono PS Bold 12
+        font pango:UbuntuMono Nerd Font 12
         colors {
-            statusline #141415
-            background #141415
-            focused_workspace #50fa7b #141415 #ff79c6
+            statusline #32302f
+            background #32302f
+            focused_workspace #a9b665 #141415 #ff79c6
         }
 }
 
@@ -170,11 +170,11 @@ exec_always --no-startup-id vmware-user
 
 exec_always --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --left-of eDP-1
 
-exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/skull2.png
+exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/gruvbear.jpeg
 
-exec --no-startup-id i3-msg 'workspace 1; exec alacritty'
-exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/brave-browser-stable --incognito'
-exec --no-startup-id i3-msg 'workspace 3; exec /opt/1Password/1password %U'
+exec --no-startup-id "i3-msg 'workspace 1; exec alacritty'"
+exec --no-startup-id "i3-msg 'workspace 2; exec /usr/bin/brave-browser-stable'"
+exec --no-startup-id "i3-msg 'workspace 3; exec /opt/1Password/1password %U'"
 
 bindsym $mod+p exec flameshot gui
 

@@ -1,6 +1,6 @@
 k9s:
   cluster: dev
-  skin: everforest
+  skin: gruvbox-material-dark-soft
   namespace:
     active: all
     lockFavorites: false
@@ -14,7 +14,7 @@ k9s:
       - networking
       - storage
   view:
-    active: context
+    active: v1/pods
   featureGates:
     nodeShell: false
   proxy: null

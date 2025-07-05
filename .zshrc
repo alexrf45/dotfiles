@@ -27,6 +27,17 @@ done
 autoload -Uz colors; colors
 autoload -Uz compinit && compinit
 
+source "$HOME/.miniplug/plugins/miniplug.zsh"
+
+miniplug plugin 'zsh-users/zsh-syntax-highlighting'
+miniplug plugin 'zsh-users/zsh-autosuggestions'
+miniplug plugin 'zsh-users/zsh-completions'
+miniplug theme 'dracula/zsh'
+
+miniplug load
+
+
+
 fpath=($HOME/.miniplug/plugins/zsh-users/zsh-completions/src $fpath)
 
 source <(kubectl completion zsh)

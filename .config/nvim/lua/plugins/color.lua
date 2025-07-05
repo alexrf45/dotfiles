@@ -37,16 +37,10 @@
 -- }
 
 return {
-  -- add dracula
-  "Mofiqul/dracula.nvim",
+  "RRethy/base16-nvim",
   lazy = false,
   priority = 1000,
   config = function()
-    require("dracula").setup({
-      colors = {
-        bg = "#141415",
-      },
-    })
-    vim.cmd.colorscheme("dracula")
+    vim.cmd.colorscheme("base16-gruvbox-material-dark-soft")
   end,
 }
