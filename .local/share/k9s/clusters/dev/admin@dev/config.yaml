@@ -5,16 +5,16 @@ k9s:
     active: all
     lockFavorites: false
     favorites:
-      - homepage
-      - cert-manager
       - flux-system
-      - wallabag
       - default
       - all
       - networking
       - storage
+      - homepage
+      - cert-manager
+      - wallabag
   view:
-    active: v1/pods
+    active: kustomization
   featureGates:
     nodeShell: false
   proxy: null

@@ -125,6 +125,7 @@ alias aws-current-cost='~/.config/scripts/awscurrentcost.sh'
 alias aws-cost-overall='~/.config/scripts/awscost.sh'
 alias s3-backend-delete='~/.config/scripts/./s3-backend-delete.sh'
 alias s3-file-list="aws s3api list-objects --query 'Contents[].Key' --output text"
+alias ami-search='aws ec2 describe-images --owner self amazon --filters "Name=architecture,Values=x86_64" "Name=name,Values=ubuntu/images/hvm-ssd/*" "Name=root-device-type,Values=ebs" --output table'
 
 
 alias s3-create='python3 ~/.config/scripts/s3.py'
@@ -164,3 +165,9 @@ alias ap='ansible-playbook'
 
 #gcp
 alias gcloud='docker run --rm --volumes-from gcloud-config gcr.io/google.com/cloudsdktool/google-cloud-cli gcloud'
+
+#misc:
+#
+alias juiceshop='docker run --name juiceshop -d --rm -p 3000:3000 bkimminich/juice-shop'
+
+
