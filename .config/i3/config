@@ -150,11 +150,11 @@ bar {
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
         i3bar_command i3bar -t
         position top
-        height 25
-        font pango:UbuntuMono Nerd Font 12
+        height 24
+        font pango:UbuntuMono Nerd Font 10
         colors {
             statusline #32302f
-            background #32302f
+            background #202020
             focused_workspace #a9b665 #141415 #ff79c6
         }
 }
