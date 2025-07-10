@@ -6,7 +6,10 @@ return {
   { "catppuccin/nvim", enabled = false },
   { "nvim-lualine/lualine.nvim", enabled = false },
   { "folke/ts-comments.nvim", enabled = false },
-
-  -- temporarily disabled due to empty file issue
-  -- { "nvim-navic", enabled = false },
+  { "folke/flash.nvim", enabled = false },
+  { "folke/tokyonight.nvim", enabled = false },
+  { "folke/persistence.nvim", enabled = false },
+  { "folke/todo-comments.nvim", enabled = false },
+  { "windwp/nvim-ts-autotag", enabled = false },
+  { "rafamadriz/friendly-snippets", enabled = false },
 }
