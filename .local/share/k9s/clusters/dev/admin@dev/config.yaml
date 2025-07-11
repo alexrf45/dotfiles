@@ -1,6 +1,6 @@
 k9s:
   cluster: dev
-  skin: gruvbox-material-dark-soft
+  skin: transparent
   namespace:
     active: all
     lockFavorites: false
@@ -14,7 +14,7 @@ k9s:
       - cert-manager
       - wallabag
   view:
-    active: kustomization
+    active: pods
   featureGates:
     nodeShell: false
   proxy: null

@@ -7,7 +7,6 @@ return {
   { "nvim-lualine/lualine.nvim", enabled = false },
   { "folke/ts-comments.nvim", enabled = false },
   { "folke/flash.nvim", enabled = false },
-  { "folke/tokyonight.nvim", enabled = false },
   { "folke/persistence.nvim", enabled = false },
   { "folke/todo-comments.nvim", enabled = false },
   { "windwp/nvim-ts-autotag", enabled = false },

@@ -16,6 +16,7 @@ export SHELL=/usr/bin/zsh
 export EDITOR=vim
 export TERM='xterm-256color'
 export VISUAL=vim
+#export _Z_CMD="j"
 
 #kubeconfig
 export KUBECONFIG="$HOME/.kube/config"
