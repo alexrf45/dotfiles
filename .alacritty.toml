@@ -123,7 +123,7 @@ mods = "Shift"
 
 [general]
 import = [
-    "~/.config/alacritty/gruv-dark.toml" ]
+    "~/.config/alacritty/irblack.toml" ]
 
     [terminal]
 

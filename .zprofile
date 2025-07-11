@@ -11,13 +11,10 @@ export AWS_CLI_AUTO_PROMPT=on-partial
 export GPG_TTY=$(tty)
 
 export MINIPLUG_HOME="$HOME/.miniplug/plugins"
-
 export SHELL=/usr/bin/zsh
 export EDITOR=vim
 export TERM='xterm-256color'
 export VISUAL=vim
-#export _Z_CMD="j"
-
 #kubeconfig
 export KUBECONFIG="$HOME/.kube/config"
 export KUBECTL_KUBERC=true
