@@ -155,7 +155,7 @@ bar {
         font pango:UbuntuMono Nerd Font 10
         colors {
             statusline #ff00ff
-            background #000000
+            background #282828
             focused_workspace #ffffff #000000 #ff00ff
         }
 }

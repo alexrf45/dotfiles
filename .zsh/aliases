@@ -1,9 +1,9 @@
-#alias :r='. ~/.zshrc'
-alias :r='exec zsh'
+alias r='. ~/.zshrc'
 alias u='sudo apt update && sudo apt upgrade -y'
 alias i='sudo apt install'
 alias h='cd ~'
 alias v='nvim'
+alias config='v ~/.vimrc'
 alias edit='nvim'
 alias c="clear"
 alias get="curl -O -L"

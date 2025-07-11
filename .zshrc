@@ -1,4 +1,4 @@
-#zmodload zsh/zprof
+ #zmodload zsh/zprof
 
 setopt AUTO_CD
 setopt AUTO_PUSHD
