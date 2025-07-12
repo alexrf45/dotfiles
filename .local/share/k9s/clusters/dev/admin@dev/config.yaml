@@ -14,7 +14,7 @@ k9s:
       - cert-manager
       - wallabag
   view:
-    active: pods
+    active: nodes
   featureGates:
     nodeShell: false
   proxy: null
