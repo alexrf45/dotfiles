@@ -155,7 +155,7 @@ bar {
         font pango:UbuntuMono Nerd Font 10
         colors {
             statusline #ff00ff
-            background #282828
+            background #2e3440
             focused_workspace #ffffff #000000 #ff00ff
         }
 }
@@ -171,7 +171,7 @@ exec_always --no-startup-id vmware-user
 
 exec_always --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --left-of eDP-1
 
-exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/skull.jpg
+exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/linux-friends-4k.png
 
 exec --no-startup-id "i3-msg 'workspace 1; exec alacritty'"
 #exec --no-startup-id "i3-msg 'workspace 2; exec /usr/bin/brave-browser-stable'"

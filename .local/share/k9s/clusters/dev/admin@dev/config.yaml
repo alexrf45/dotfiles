@@ -1,6 +1,6 @@
 k9s:
   cluster: dev
-  skin: transparent
+  skin: gruvbox-material-dark-hard
   namespace:
     active: all
     lockFavorites: false
