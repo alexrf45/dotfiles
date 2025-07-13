@@ -14,7 +14,7 @@ k9s:
       - cert-manager
       - wallabag
   view:
-    active: nodes
+    active: cluster
   featureGates:
     nodeShell: false
   proxy: null

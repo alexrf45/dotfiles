@@ -2,7 +2,7 @@ k9s:
   cluster: prod
   skin: gruvbox-material-dark-soft
   namespace:
-    active: default
+    active: all
     lockFavorites: true
     favorites:
       - blog
@@ -10,7 +10,7 @@ k9s:
       - all
       - networking
   view:
-    active: nodes
+    active: ingress
   featureGates:
     nodeShell: false
   proxy: null
