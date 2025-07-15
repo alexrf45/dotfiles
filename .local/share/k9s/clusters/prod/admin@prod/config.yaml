@@ -10,7 +10,7 @@ k9s:
       - all
       - networking
   view:
-    active: ingress
+    active: nodes
   featureGates:
     nodeShell: false
   proxy: null

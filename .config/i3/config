@@ -109,7 +109,7 @@ bindsym $mod+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, (r)eboot, (Shift+s)hutdown
 
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3lock --nofork -i ~/.config/pictures/skull.jpg, mode "default" 
+    bindsym l exec --no-startup-id i3lock --nofork -i ~/.config/pictures/nice.jpg, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym r exec --no-startup-id /sbin/reboot, mode "default"
     bindsym Shift+s exec --no-startup-id /sbin/poweroff, mode "default"
@@ -155,7 +155,7 @@ bar {
         font pango:UbuntuMono Nerd Font 10
         colors {
             statusline #ff00ff
-            background #000000
+            background #1d2021
             focused_workspace #ffffff #000000 #ff00ff
         }
 }
@@ -171,7 +171,7 @@ exec_always --no-startup-id vmware-user
 
 exec_always --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --left-of eDP-1
 
-exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/nice.jpg
+exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/gruvbear.jpeg
 
 exec --no-startup-id "i3-msg 'workspace 1; exec alacritty'"
 #exec --no-startup-id "i3-msg 'workspace 2; exec /usr/bin/brave-browser-stable'"

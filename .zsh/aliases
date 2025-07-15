@@ -21,9 +21,7 @@ alias vpn='sudo openvpn ~/.config/openvpn/us-ny-599.protonvpn.udp.ovpn'
 alias blog='scp ~/pico/blog/* prose.sh:/'
 
 #note backup
-alias brain-backup='aws s3 sync --delete ~/sean/. s3://notes-backup-primary'
-
-alias homelab='cd ~/home-lab/'
+alias brain-backup='aws s3 sync --delete ~/notes/notes-vault/. s3://notes-backup-primary'
 
 # git
 
@@ -101,7 +99,7 @@ alias tfo='terraform output'
 alias tfd='terraform destroy'
 alias cost='infracost breakdown --path=.'
 alias docs='terraform-docs markdown table --hide modules --sort-by required --output-file README.md --output-mode inject ../'
-
+alias tf-docs='docker run --rm --volume "$(pwd):/terraform-docs" -u $(id -u) quay.io/terraform-docs/terraform-docs:0.20.0 markdown /terraform-docs'
 #aws-vault
 alias av='aws-vault exec $1 --duration=2h'
 alias avs='aws-vault exec $1 --no-session'
@@ -123,7 +121,7 @@ alias aws-services-list='~/.config/scripts/./services.sh'
 alias aws-services-cost='~/.config/scripts/service-cost.sh'
 alias aws-current-cost='~/.config/scripts/awscurrentcost.sh'
 alias aws-cost-overall='~/.config/scripts/awscost.sh'
-alias s3-backend-delete='~/.config/scripts/./s3-backend-delete.sh'
+alias s3-backend-delete='~/.config/scripts/./s3-delete.sh'
 alias s3-file-list="aws s3api list-objects --query 'Contents[].Key' --output text"
 alias ami-search='aws ec2 describe-images --owner self amazon --filters "Name=architecture,Values=x86_64" "Name=name,Values=ubuntu/images/hvm-ssd/*" "Name=root-device-type,Values=ebs" --output table'
 

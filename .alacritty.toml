@@ -24,9 +24,8 @@ history = 20000
 
 
 #normal = { family="Iosevka Nerd Font Mono" , style = "Bold"}
-normal = { family="UbuntuMono Nerd Font" , style = "Bold"}
+normal = { family="UbuntuMono Nerd Font" , style = ""}
 #normal = { family="JetBrains Mono" , style = "Bold"}
-#normal = { family="Monospace" , style = "Bold"}
 
 size = 12
 
@@ -123,7 +122,7 @@ mods = "Shift"
 
 [general]
 import = [
-    "~/.config/alacritty/irblack.toml" ]
+    "~/.config/alacritty/gm.toml" ]
 
     [terminal]
 
