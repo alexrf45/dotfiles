@@ -2,9 +2,10 @@ k9s:
   cluster: dev
   skin: gruvbox-material-dark-hard
   namespace:
-    active: networking
+    active: all
     lockFavorites: false
     favorites:
+      - external-secrets
       - nextcloud
       - flux-system
       - default
@@ -13,9 +14,8 @@ k9s:
       - storage
       - homepage
       - cert-manager
-      - wallabag
   view:
-    active: svc
+    active: context
   featureGates:
     nodeShell: false
   proxy: null

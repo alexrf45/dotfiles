@@ -10,7 +10,7 @@ k9s:
       - all
       - networking
   view:
-    active: nodes
+    active: pods
   featureGates:
     nodeShell: false
   proxy: null

@@ -1,0 +1,15 @@
+#terraform
+alias tf='terraform'
+alias tfi='terraform init'
+alias tfir='terraform init -backend-config="remote.tfbackend" -upgrade'
+alias tflint='terraform fmt && terraform validate'
+alias tfv='terraform validate'
+alias tfp='terraform plan'
+alias tfa='terraform apply'
+alias tfs='terraform state'
+alias tfsls='terraform state list'
+alias tfo='terraform output'
+alias tfd='terraform destroy'
+alias cost='infracost breakdown --path=.'
+alias docs='terraform-docs markdown table --hide modules --sort-by required --output-file README.md --output-mode inject ../'
+
