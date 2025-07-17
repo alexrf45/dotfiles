@@ -106,5 +106,5 @@ k9s-docker() {
   docker run \
     --rm --net=host -it \
     -v "$KUBECONFIG:/root/.kube/config" \
-    quay.io/derailed/k9s:latest
+    derailed/k9s:latest
 }

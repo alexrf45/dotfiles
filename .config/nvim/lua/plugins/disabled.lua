@@ -8,7 +8,7 @@ return {
   { "folke/ts-comments.nvim", enabled = false },
   { "folke/flash.nvim", enabled = false },
   { "folke/persistence.nvim", enabled = false },
-  { "folke/todo-comments.nvim", enabled = false },
+  -- { "folke/todo-comments.nvim", enabled = false },
   { "windwp/nvim-ts-autotag", enabled = false },
   { "rafamadriz/friendly-snippets", enabled = false },
   --     { "saghen/blink.cmp", enabled = false },
