@@ -96,7 +96,7 @@ bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
-
+bindsym $mod+Shift+6 move container to workspace number $ws6
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -120,12 +120,7 @@ mode "$mode_system" {
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym $left       resize shrink width 10 px or 10 ppt
         bindsym $down       resize grow height 10 px or 10 ppt
         bindsym $up         resize shrink height 10 px or 10 ppt
@@ -150,12 +145,12 @@ bar {
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
         i3bar_command i3bar -t
         position top
-        mode hide
+        mode dock 
         height 24
         font pango:UbuntuMono Nerd Font 10
         colors {
             statusline #ff00ff
-            background #1d2021
+            background #000000
             focused_workspace #ffffff #000000 #ff00ff
         }
 }
@@ -168,14 +163,9 @@ gaps outer 1
 smart_gaps on
 
 exec_always --no-startup-id vmware-user
-
 exec_always --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --left-of eDP-1
-
-exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/gruvbear.jpeg
-
+exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/skull.jpg
 exec --no-startup-id "i3-msg 'workspace 1; exec alacritty'"
-#exec --no-startup-id "i3-msg 'workspace 2; exec /usr/bin/brave-browser-stable'"
-#exec --no-startup-id "i3-msg 'workspace 3; exec /opt/1Password/1password %U'"
 
 bindsym $mod+p exec flameshot gui
 

@@ -122,7 +122,7 @@ mods = "Shift"
 
 [general]
 import = [
-    "~/.config/alacritty/gms.toml" ]
+    "~/.config/alacritty/mac.toml" ]
 
     [terminal]
 

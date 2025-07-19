@@ -7,9 +7,9 @@
 #  $character
 # """
 format = """
-[╭─k8s──────❯](dimmed white) $kubernetes
-[┣─cloud────❯](dimmed white) $aws $gcloud $azure
-[┣─project──❯](dimmed white) $directory$git_branch $git_status $git_commit $golang$terraform$docker_context$python$docker_context$nodejs
+[╭─k8s──────❯](bold white) $kubernetes
+[┣─cloud────❯](bold white) $aws $gcloud $azure
+[┣─project──❯](bold white) $directory$git_branch $git_status $git_commit $golang$terraform$docker_context$python$docker_context$nodejs
 [╰](bold white)$character
 """
 
