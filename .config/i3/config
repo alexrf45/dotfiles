@@ -159,11 +159,14 @@ bar {
    position top
    mode dock
    font pango:Iosevka Nerd Font Regular 12
-   height 25
+   height 22
    tray_output none
    status_command /usr/bin/bumblebee-status \
-      -m cpu memory battery time pasink pasource \
-      -p time.format="%H:%M" \
+      -m pomodoro bluetooth2 battery time pasink pasource playerctl \
+      -p time.format="%d %B %Y %H:%M:%S"\
+      scroll.width=4 \
+      disk.path=/home \
+      playerctl.format='{{artist}}:{{title}}  {{duration(position)}}/{{duration(mpris:length)}}' \
       -t gruvbox-powerline
    colors {
              statusline #ff00ff
