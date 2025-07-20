@@ -141,19 +141,36 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# bar {
+#     status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#         i3bar_command i3bar -t
+#         position bottom
+#         mode dock
+#         height 24
+#         font pango:UbuntuMono Nerd Font 10
+#         colors {
+#             statusline #ff00ff
+#             background #000000
+#             focused_workspace #ffffff #000000 #ff00ff
+#         }
+# }
+
 bar {
-    status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        i3bar_command i3bar -t
-        position top
-        mode dock 
-        height 24
-        font pango:UbuntuMono Nerd Font 10
-        colors {
-            statusline #ff00ff
-            background #000000
-            focused_workspace #ffffff #000000 #ff00ff
-        }
-}
+   position top
+   mode dock
+   font pango:Iosevka Nerd Font Regular 12
+   height 25
+   tray_output none
+   status_command /usr/bin/bumblebee-status \
+      -m cpu memory battery time pasink pasource \
+      -p time.format="%H:%M" \
+      -t gruvbox-powerline
+   colors {
+             statusline #ff00ff
+             background #32302f
+             focused_workspace #ffffff #000000 #ff00ff
+         }
+  }
 
 
 # i3-gaps
@@ -164,7 +181,7 @@ smart_gaps on
 
 exec_always --no-startup-id vmware-user
 exec_always --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --left-of eDP-1
-exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/skull.jpg
+exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/gruvbear.jpeg
 exec --no-startup-id "i3-msg 'workspace 1; exec alacritty'"
 
 bindsym $mod+p exec flameshot gui
