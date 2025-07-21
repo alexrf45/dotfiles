@@ -1,13 +1,15 @@
 [user]
+  name = alexrf45
 	email = fonalex45@gmail.com
-	name = alexrf45
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL12pfw++v9LFlLvug4OaZ9biScTIq8hcm6uiYM9kO4j
 [init]
 	defaultBranch = main
 [commit]
 	gpgsign = true
 [core]
-	editor = nvim
+  editor = nvim
+[pull]
+  rebase = true
 [gpg]
 	format = ssh
 [gpg "ssh"]

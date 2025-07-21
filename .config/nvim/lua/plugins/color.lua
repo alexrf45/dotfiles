@@ -11,11 +11,21 @@
 --   end,
 -- }
 --
+-- return {
+--   "RRethy/base16-nvim",
+--   lazy = false,
+--   priority = 1000,
+--   config = function()
+--     vim.cmd.colorscheme("base16-gruvbox-material-dark-hard")
+--   end,
+-- }
+
 return {
-  "RRethy/base16-nvim",
+  "fcancelinha/nordern.nvim",
+  branch = "master",
   lazy = false,
   priority = 1000,
   config = function()
-    vim.cmd.colorscheme("base16-gruvbox-material-dark-soft")
+    vim.cmd.colorscheme("nordern")
   end,
 }
