@@ -167,14 +167,13 @@ bar {
       scroll.width=4 \
       disk.path=/home \
       playerctl.format='{{artist}}:{{title}}  {{duration(position)}}/{{duration(mpris:length)}}' \
-      -t gruvbox-powerline
+      -t night-powerline
    colors {
              statusline #ff00ff
-             background #32302f
+             background #1d1f21
              focused_workspace #ffffff #000000 #ff00ff
          }
   }
-
 
 # i3-gaps
 for_window [class="^.*"] border pixel 0
@@ -184,7 +183,7 @@ smart_gaps on
 
 exec_always --no-startup-id vmware-user
 exec_always --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --left-of eDP-1
-exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/gruvbear.jpeg
+exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/egypt.jpg
 exec --no-startup-id "i3-msg 'workspace 1; exec alacritty'"
 
 bindsym $mod+p exec flameshot gui
