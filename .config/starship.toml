@@ -24,7 +24,7 @@ read_only = " 🔒"
 home_symbol = "~"
 truncation_length = 3
 truncate_to_repo = true # truncates directory to root folder if in github repo
-style = " blue"
+style = "grey"
 
 
 [character]

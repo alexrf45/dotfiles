@@ -29,5 +29,5 @@ background = "#504945"
 text = "#d4be98"
 
 [colors.primary]
-background = "#32302f"
+background = "#000000"
 foreground = "#d4be98"

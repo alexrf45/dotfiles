@@ -122,7 +122,7 @@ mods = "Shift"
 
 [general]
 import = [
-    "~/.config/alacritty/rusty.toml" ]
+    "~/.config/alacritty/gms.toml" ]
 
     [terminal]
 
