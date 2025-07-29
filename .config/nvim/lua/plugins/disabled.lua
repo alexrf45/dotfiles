@@ -10,6 +10,6 @@ return {
   { "folke/persistence.nvim", enabled = false },
   -- { "folke/todo-comments.nvim", enabled = false },
   { "windwp/nvim-ts-autotag", enabled = false },
-  { "rafamadriz/friendly-snippets", enabled = false },
+  { "rafamadriz/friendly-snippets", enabled = true },
   --     { "saghen/blink.cmp", enabled = false },
 }

@@ -14,7 +14,7 @@ startup_mode = "Maximized"
 
 [cursor]
 style = "underline"
-thickness = 0.2
+thickness = 0.1
 
 
 [scrolling]
@@ -22,10 +22,9 @@ history = 20000
 
 [font]
 
-
 #normal = { family="Iosevka Nerd Font Mono" , style = "Bold"}
-normal = { family="UbuntuMono Nerd Font" , style = ""}
-#normal = { family="JetBrains Mono" , style = "Bold"}
+#normal = { family="UbuntuMono Nerd Font" , style = ""}
+normal = { family="JetBrains Mono" , style = ""}
 
 size = 12
 

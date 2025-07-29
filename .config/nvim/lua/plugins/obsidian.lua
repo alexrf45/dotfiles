@@ -26,8 +26,20 @@ return {
     },
 
     daily_notes = {
-      folder = "daily",
+      folder = "notes/daily",
       date_format = "%Y-%m-%d",
+      alias_format = "%B %-d, %Y",
+      template = "templates/Daily_Note_Template",
+    },
+
+    attachements = {
+      img_folder = "images",
+    },
+
+    templates = {
+      folder = "templates",
+      date_format = "%Y-%m-%d-%a",
+      time_format = "%H:%M",
     },
     mappings = {
       -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.

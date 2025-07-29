@@ -93,12 +93,17 @@ style = "bold green"
 [[kubernetes.contexts]]
 context_pattern = "^admin@prod$"
 context_alias = "prod"
-style = "green"
+style = "bold red"
 
 [[kubernetes.contexts]]
-context_pattern = "^admin@dev$"
+context_pattern = "^admin@anubis$"
 context_alias = "dev"
-style = "blue"
+style = "bold yellow"
+
+[[kubernetes.contexts]]
+context_pattern = "^admin@horus$"
+context_alias = "testing"
+style = "italic purple"
 
 [azure]
 disabled = false

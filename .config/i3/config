@@ -17,7 +17,7 @@ set $right semicolon
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+q kill
@@ -184,7 +184,7 @@ smart_gaps on
 exec_always --no-startup-id vmware-user
 exec_always --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --left-of eDP-1
 exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/egypt.jpg
-exec --no-startup-id "i3-msg 'workspace 1; exec alacritty'"
+exec --no-startup-id "i3-msg 'workspace 1; exec kitty'"
 
 bindsym $mod+p exec flameshot gui
 
