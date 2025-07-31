@@ -1,3 +1,3 @@
 return {
-  "psliwka/termcolors.nvim",
+  "sekhat/termcolors.nvim",
 }

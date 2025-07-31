@@ -102,9 +102,10 @@ nb() {
     s3://notes-backup-primary
 }
 
-k9s-docker() {
+k9s() {
   docker run \
     --rm --net=host -it \
     -v "$KUBECONFIG:/root/.kube/config" \
-    derailed/k9s:latest "@"
+    -v "/home/fr3d/.config/k9s:/root/.config/k9s" \
+    derailed/k9s:latest "$@"
 }

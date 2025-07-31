@@ -1,12 +1,11 @@
 return {
-  "sainnhe/gruvbox-material",
+  "loctvl842/monokai-pro.nvim",
   lazy = false,
   priority = 1000,
   config = function()
-    -- Optionally configure and load the colorscheme
-    -- directly inside the plugin declaration.
-    vim.g.gruvbox_material_enable_italic = true
-    vim.g.gruvbox_material_transparent_background = true
-    vim.cmd.colorscheme("gruvbox-material")
+    require("monokai-pro").setup({
+      transparent_background = true,
+    })
+    vim.cmd("colorscheme monokai-pro-spectrum")
   end,
 }

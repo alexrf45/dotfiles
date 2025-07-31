@@ -22,7 +22,7 @@ bindsym $mod+Return exec kitty
 # kill focused window
 bindsym $mod+q kill
 
-bindsym $mod+d exec rofi -config "~/.config/rofi/config.rasi" -show drun
+bindsym $mod+d  exec dmenu_run -i -p fr3d -nb '#000000' -nf '#00FF00' -sb '#00FF00' -sf '#000000'
 
 # change focus
 bindsym $mod+$left focus left
@@ -167,7 +167,7 @@ bar {
       scroll.width=4 \
       disk.path=/home \
       playerctl.format='{{artist}}:{{title}}  {{duration(position)}}/{{duration(mpris:length)}}' \
-      -t night-powerline
+      -t zengarden
    colors {
              statusline #ff00ff
              background #1d1f21
@@ -183,7 +183,7 @@ smart_gaps on
 
 exec_always --no-startup-id vmware-user
 exec_always --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --left-of eDP-1
-exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/egypt.jpg
+exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/skull.jpg
 exec --no-startup-id "i3-msg 'workspace 1; exec kitty'"
 
 bindsym $mod+p exec flameshot gui
