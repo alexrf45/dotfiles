@@ -51,4 +51,5 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 
 eval "$(starship init zsh)"
+
 #zprof > /tmp/zprof.out

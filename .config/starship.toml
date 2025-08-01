@@ -1,16 +1,11 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-# format = """
-#   $directory$git_branch$git_status$git_commit$python
-#  $azure$gcloud$aws$kubernetes
-#  $character
-# """
 format = """
-[╭─k8s──────❯](bold grey) $kubernetes
-[┣─cloud────❯](bold grey) $aws $gcloud $azure
-[┣─project──❯](bold grey) $directory$git_branch $git_status $git_commit $golang$terraform$docker_context$python$docker_context$nodejs
-[╰](bold grey)$character
+[╭─k8s──────❯](bold green) $kubernetes
+[┣─cloud────❯](bold green) $aws $gcloud $azure
+[┣─project──❯](bold green) $directory$git_branch $git_status $git_commit $golang$terraform$docker_context$python$docker_context$nodejs
+[╰](bold green)$character
 """
 
 # Wait 10 milliseconds for starship to check files under the current directory.
@@ -28,7 +23,7 @@ style = "grey"
 
 
 [character]
-success_symbol = " [>](bold yellow)"
+success_symbol = " [>](bold green)"
 error_symbol = " [×](bold red)"
 
 
