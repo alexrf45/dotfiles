@@ -26,7 +26,7 @@ return {
     },
 
     daily_notes = {
-      folder = "notes/daily",
+      folder = "./",
       date_format = "%Y-%m-%d",
       alias_format = "%B %-d, %Y",
       template = "templates/Daily_Note_Template",

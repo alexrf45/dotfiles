@@ -15,7 +15,7 @@ return {
   lazy = false,
   priority = 1000,
   config = function()
-    vim.cmd.colorscheme("base16-gruvbox-material-dark-soft")
+    vim.cmd.colorscheme("base16-0x96f")
     -- require("base16-colorscheme").setup({
     --   base00 = "#0d0d0d", -- Very Dark Background
     --   base01 = "#121212", -- Darker Background

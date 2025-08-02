@@ -155,7 +155,7 @@ bar {
       -t gruvbox-powerline
    colors {
              statusline #ff00ff
-             background #32302f
+             background #262427
              focused_workspace #ffffff #000000 #ff00ff
          }
   }

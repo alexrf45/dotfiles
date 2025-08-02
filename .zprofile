@@ -1,5 +1,7 @@
-export PATH="$PATH:$HOME/.local/bin:$HOME/.local/bin/go/bin:$HOME/.pulumi/bin:$HOME/.cargo/bin/:$HOME/.npm-global/bin"
+export PATH="$PATH:$HOME/.local/bin:$GOROOT:$GOPATH:$HOME/.pulumi/bin:$HOME/.cargo/bin/:$HOME/.npm-global/bin"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export GOROOT="$HOME/.local/bin/go/bin"
+export GOPATH="$HOME/.config/go/bin"
 export RUSTUP_HOME="$HOME/.rustup"
 export CARGO_HOME="$HOME/.cargo"
 export DISABLE_AUTO_TITLE='true'
