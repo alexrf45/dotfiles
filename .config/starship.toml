@@ -2,10 +2,10 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[╭─k8s──────❯](bold green) $kubernetes
-[┣─cloud────❯](bold green) $aws $gcloud $azure
-[┣─project──❯](bold green) $directory$git_branch $git_status $git_commit $golang$terraform$docker_context$python$docker_context$nodejs
-[╰](bold green)$character
+[╭─k8s──────❯](white) $kubernetes
+[┣─cloud────❯](white) $aws $gcloud $azure
+[┣─project──❯](white) $directory$git_branch $git_status $git_commit $golang$terraform$docker_context$python$docker_context$nodejs
+[╰](white)$character
 """
 
 # Wait 10 milliseconds for starship to check files under the current directory.
@@ -26,6 +26,18 @@ style = "grey"
 success_symbol = " [>](bold green)"
 error_symbol = " [×](bold red)"
 
+[time]
+disabled = true
+style = "bold purple"
+format = "🕙 $time($style) "
+time_format = "%T"
+utc_time_offset = "-5"
+
+[custom.tztime]
+command = 'date +"%a %b %d %Y %T"'
+when = "true"
+format = ' [\[🕙 $symbol($output)\]]($style)'
+style = "bold white"
 
 [line_break]
 disabled = false

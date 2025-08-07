@@ -152,10 +152,10 @@ bar {
       scroll.width=4 \
       disk.path=/home \
       playerctl.format='{{artist}}:{{title}}  {{duration(position)}}/{{duration(mpris:length)}}' \
-      -t iceberg-contrast
+      -t gruvbox-powerline
    colors {
-             statusline #ff00ff
-             background #000000
+             statusline #32302f
+             background #32302f
              focused_workspace #ffffff #000000 #ff00ff
          }
   }
@@ -167,7 +167,7 @@ gaps outer 1
 smart_gaps on
 
 exec_always --no-startup-id vmware-user
-exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/gruvbear.png
+exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/gruvbear.jpeg
 exec --no-startup-id "i3-msg 'workspace 1; exec kitty'"
 exec --no-startup-id "i3-msg 'workspace 2; exec brave-browser'"
 

@@ -11,6 +11,7 @@ alias get="curl -O -L"
 alias dir='exa'
 alias t='tmux'
 alias dev='tmuxp load ~/.config/tmuxp/debian-desktop.yaml'
+alias kali='tmuxp load ~/.config/tmuxp/security.yaml'
 alias py='python3'
 alias weather='curl https://wttr.in'
 alias public='curl wtfismyip.com/text'
