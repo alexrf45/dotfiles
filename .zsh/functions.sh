@@ -109,3 +109,9 @@ k9s() {
     -v "/home/fr3d/.config/k9s:/root/.config/k9s" \
     derailed/k9s:latest "$@"
 }
+
+tf-docs() {
+  docker run --rm \
+    --volume "$(pwd):/terraform-docs" \
+    -u "$(id -u)" quay.io/terraform-docs/terraform-docs:0.20.0 markdown /terraform-docs
+}

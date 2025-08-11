@@ -11,7 +11,7 @@ windows:
   - window_name: spotify
     layout: tiled
     panes:
-      - ncspot
+      - ncspot -d ~/.local/ncspot.log
   - window_name: local
     layout: tiled
     panes:

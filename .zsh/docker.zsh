@@ -32,4 +32,4 @@ alias gcloud='docker run --rm --volumes-from gcloud-config gcr.io/google.com/clo
 alias juiceshop='docker run --name juiceshop -d --rm -p 3000:3000 bkimminich/juice-shop'
 
 #terraform-docs
-alias tf-docs='docker run --rm --volume "$(pwd):/terraform-docs" -u $(id -u) quay.io/terraform-docs/terraform-docs:0.20.0 markdown /terraform-docs'
+#alias tf-docs='docker run --rm --volume "$(pwd):/terraform-docs" -u $(id -u) quay.io/terraform-docs/terraform-docs:0.20.0 markdown /terraform-docs'

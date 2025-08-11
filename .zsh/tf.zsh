@@ -11,5 +11,5 @@ alias tfsls='terraform state list'
 alias tfo='terraform output'
 alias tfd='terraform destroy'
 alias cost='infracost breakdown --path=.'
-alias docs='terraform-docs markdown table --hide modules --sort-by required --output-file README.md --output-mode inject ../'
+#alias docs='terraform-docs markdown table --hide modules --sort-by required --output-file README.md --output-mode inject ../'
 
