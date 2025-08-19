@@ -16,4 +16,7 @@ windows:
     layout: tiled
     panes:
       - calendar
-
+  - window_name: notes
+    layout: tiled
+    panes:
+      - cd ~/notes/notes-vault/ && v

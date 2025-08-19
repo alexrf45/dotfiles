@@ -103,8 +103,9 @@ format = '[k8s: $context \($namespace\)]($style) '
 disabled = false
 style = "bold green"
 
+
 [[kubernetes.contexts]]
-context_pattern = "^admin@prod$"
+context_pattern = "^admin@osiris$"
 context_alias = "prod"
 style = "bold red"
 
