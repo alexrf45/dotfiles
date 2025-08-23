@@ -142,7 +142,7 @@ bindsym $mod+r mode "resize"
 
 bar {
    position top
-   mode dock
+   mode hide
    font pango:Iosevka Nerd Font Regular 12
    height 22
    tray_output none
@@ -152,10 +152,10 @@ bar {
       scroll.width=4 \
       disk.path=/home \
       playerctl.format='{{artist}}:{{title}}  {{duration(position)}}/{{duration(mpris:length)}}' \
-      -t gruvbox-powerline
+      -t nord-powerline
    colors {
-             statusline #32302f
-             background #32302f
+             statusline #2e3440
+             background #2e3440
              focused_workspace #ffffff #000000 #ff00ff
          }
   }
