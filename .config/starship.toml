@@ -36,6 +36,7 @@ utc_time_offset = "-5"
 
 [custom.tztime]
 command = 'date +"%a %b %d %Y %T"'
+disabled = true
 when = "true"
 format = ' [\[🕙 $symbol($output)\]]($style)'
 style = "bold white"
