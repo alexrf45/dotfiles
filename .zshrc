@@ -3,6 +3,7 @@
 setopt AUTO_CD
 setopt AUTO_PUSHD
 setopt EXTENDED_GLOB
+setopt EXTENDED_HISTORY
 setopt NOMATCH
 setopt MENU_COMPLETE
 setopt GLOB_DOTS
@@ -10,6 +11,7 @@ setopt INTERACTIVE_COMMENTS
 setopt HIST_IGNORE_SPACE  # Don't save when prefixed with space
 setopt HIST_IGNORE_DUPS # Don't save duplicate lines
 setopt HIST_VERIFY
+setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY      # Share history between sessions
 setopt PROMPT_SUBST
 unsetopt beep
@@ -39,7 +41,7 @@ fpath=($HOME/.miniplug/plugins/zsh-users/zsh-completions/src $fpath)
 
 source <(kubectl completion zsh)
 
-compdef k='kubectl'
+compdef _kubectl k
 
 . "$HOME/.cargo/env"
 
@@ -51,5 +53,7 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 
 eval "$(starship init zsh)"
+
+fortune | cowsay | lolcat
 
 #zprof > /tmp/zprof.out

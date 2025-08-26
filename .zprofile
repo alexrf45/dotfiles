@@ -17,9 +17,12 @@ export SHELL=/usr/bin/zsh
 export EDITOR=vim
 export TERM='xterm-256color'
 export VISUAL=vim
+export DOCKER_BUILDKIT=1
 #kubeconfig
 export KUBECONFIG="$HOME/.kube/config"
 export KUBECTL_KUBERC=true
+export KUBE_EDITOR=nvim
+
 ## FZF
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --color=fg:-1,fg+:#d0d0d0,bg:-1,bg+:#262626

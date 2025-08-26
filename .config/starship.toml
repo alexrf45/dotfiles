@@ -2,10 +2,10 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[╭─k8s──────❯](white) $kubernetes $terraform $docker_context
-[┣─cloud────❯](white) $aws $gcloud $azure
-[┣─project──❯](white) $directory$git_branch $git_status $git_commit
-[┣─language──❯](white) $golang $python
+[╭─k8s──────❯](grey) $kubernetes $terraform $docker_context
+[┣─cloud────❯](grey) $aws $gcloud $azure
+[┣─project──❯](grey) $directory$git_branch $git_status $git_commit
+[┣─language──❯](grey) $golang $python
 [╰](white)$character
 """
 
