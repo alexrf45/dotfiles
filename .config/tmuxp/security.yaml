@@ -1,0 +1,23 @@
+session_name: kali
+windows:
+  - window_name: notes
+    layout: tiled
+    panes:
+      - cd ~/notes/notes-vault/ && v
+  - window_name: kali
+    layout: tiled
+    panes:
+      - cd ~/hackthebox/
+  - window_name: host
+    layout: tiled
+    panes:
+      - btop
+  - window_name: spotify
+    layout: tiled
+    panes:
+      - ncspot
+  - window_name: vpn
+    layout: tiled
+    panes:
+      - htb
+

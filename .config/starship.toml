@@ -2,11 +2,9 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[╭─k8s──────❯](grey) $kubernetes $terraform $docker_context
-[┣─cloud────❯](grey) $aws $gcloud $azure
-[┣─project──❯](grey) $directory$git_branch $git_status $git_commit
-[┣─language──❯](grey) $golang $python
-[╰](white)$character
+[╭─infra──────❯](grey) $kubernetes $terraform $aws $gcloud $azure
+[┣─project──❯](grey) $directory$git_branch $git_status $git_commit $golang $python
+[╰](grey)$character
 """
 
 # Wait 10 milliseconds for starship to check files under the current directory.
@@ -37,6 +35,13 @@ utc_time_offset = "-5"
 [custom.tztime]
 command = 'date +"%a %b %d %Y %T"'
 disabled = true
+when = "true"
+format = ' [\[🕙 $symbol($output)\]]($style)'
+style = "bold white"
+
+[custom.vpn]
+command = "ip addr show | grep -E '^[0-9]+: (tun|tap|wg)' -A 2 | grep 'inet ' | head -1 | awk '{print $2}' | cut -d'/' -f1"
+disabled = false
 when = "true"
 format = ' [\[🕙 $symbol($output)\]]($style)'
 style = "bold white"

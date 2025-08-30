@@ -8,13 +8,21 @@ setopt NOMATCH
 setopt MENU_COMPLETE
 setopt GLOB_DOTS
 setopt INTERACTIVE_COMMENTS
-setopt HIST_IGNORE_SPACE  # Don't save when prefixed with space
 setopt HIST_IGNORE_DUPS # Don't save duplicate lines
 setopt HIST_VERIFY
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY      # Share history between sessions
 setopt PROMPT_SUBST
 unsetopt beep
+setopt HIST_IGNORE_SPACE
+
+alias jrnl=" jrnl"
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+#zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ffffff,standout"
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="20"
@@ -34,7 +42,6 @@ source "$HOME/.miniplug/plugins/miniplug.zsh"
 miniplug plugin 'zsh-users/zsh-syntax-highlighting'
 miniplug plugin 'zsh-users/zsh-autosuggestions'
 miniplug plugin 'zsh-users/zsh-completions'
-
 miniplug load
 
 fpath=($HOME/.miniplug/plugins/zsh-users/zsh-completions/src $fpath)
@@ -54,6 +61,6 @@ eval "$(zoxide init zsh)"
 
 eval "$(starship init zsh)"
 
-fortune | cowsay | lolcat
+fortune | cowsay
 
 #zprof > /tmp/zprof.out

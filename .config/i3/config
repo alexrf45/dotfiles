@@ -152,10 +152,10 @@ bar {
       scroll.width=4 \
       disk.path=/home \
       playerctl.format='{{artist}}:{{title}}  {{duration(position)}}/{{duration(mpris:length)}}' \
-      -t onedark-powerline
+      -t night-powerline
    colors {
-             statusline #2e3440
-             background #2e3440
+             statusline #000000
+             background #000000
              focused_workspace #ffffff #000000 #ff00ff
          }
   }

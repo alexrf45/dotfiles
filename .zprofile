@@ -2,9 +2,11 @@ export PATH="$PATH:$HOME/.local/bin:$GOROOT:$GOPATH:$HOME/.pulumi/bin:$HOME/.car
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export GOROOT="$HOME/.local/bin/go/bin"
 export GOPATH="$HOME/.config/go/bin"
+export GOPROXY=https://proxy.golang.org,direct
+export GOSUMDB="sum.golang.org"
 export RUSTUP_HOME="$HOME/.rustup"
 export CARGO_HOME="$HOME/.cargo"
-export DISABLE_AUTO_TITLE='true'
+export DISABLE_AUTO_TITLE='false'
 #aws-cli ENV
 export AWS_REGION=us-east-1
 export AWS_VAULT_BACKEND=pass
@@ -14,9 +16,9 @@ export GPG_TTY=$(tty)
 
 export MINIPLUG_HOME="$HOME/.miniplug/plugins"
 export SHELL=/usr/bin/zsh
-export EDITOR=vim
+export EDITOR=nvim
 export TERM='xterm-256color'
-export VISUAL=vim
+export VISUAL=nvim
 export DOCKER_BUILDKIT=1
 #kubeconfig
 export KUBECONFIG="$HOME/.kube/config"

@@ -1,0 +1,22 @@
+session_name: scrt-dev
+windows:
+  - window_name: SCRT dev
+    layout: tiled
+    panes:
+      - cd ~/projects/SCRT && v
+  - window_name: container
+    layout: tiled
+    panes:
+      - cd $HOME/scrt-dev/
+  - window_name: spotify
+    layout: tiled
+    panes:
+      - ncspot -d ~/.local/ncspot.log
+  - window_name: local
+    layout: tiled
+    panes:
+      - btop
+  - window_name: notes
+    layout: tiled
+    panes:
+      - cd ~/notes/notes-vault/ && v
