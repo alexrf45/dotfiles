@@ -7,7 +7,7 @@ alias dc='docker container'
 alias dnt='docker network'
 
 #unprivileged docker shell
-alias ds='docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" -u "$(id -u):$(id -g)" -it'
+alias ds='docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" -u "$(id -u):$(id -g)" -it debian:13-slim'
 
 #docker compose
 alias d-up='docker-compose up -d'

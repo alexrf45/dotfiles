@@ -6,6 +6,7 @@
 	defaultBranch = main
 [commit]
 	gpgsign = true
+	verbose = true
 [core]
   editor = nvim
 [pull]
@@ -15,3 +16,17 @@
 [gpg "ssh"]
 	allowedSignersFile = /home/fr3d/.config/git/allowed_signers
 	program = /opt/1Password/op-ssh-sign
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[push]
+	default = simple
+	autoSetupRemote = true
+	followTags = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true

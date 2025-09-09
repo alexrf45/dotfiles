@@ -61,6 +61,6 @@ eval "$(zoxide init zsh)"
 
 eval "$(starship init zsh)"
 
-fortune | cowsay
+source "/home/fr3d/.config/op/plugins.sh"
 
 #zprof > /tmp/zprof.out
