@@ -19,6 +19,7 @@ alias public='curl wtfismyip.com/text'
 alias q='exit'
 alias pdf='zathura'
 alias download='aria2c'
+alias spotify='ncspot -d ~/.local/ncspot.log'
 alias htb='sudo openvpn ~/.config/openvpn/lab_fr3d1eeT.ovpn'
 alias vpn='sudo openvpn ~/.config/openvpn/us-ny-599.protonvpn.udp.ovpn'
 
