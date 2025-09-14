@@ -3,7 +3,7 @@ windows:
   - window_name: home-ops
     layout: tiled
     panes:
-      - cd ~/home-ops && v
+      - cd ~/home-ops && v .
   - window_name: k9s
     layout: tiled
     panes:
@@ -19,4 +19,4 @@ windows:
   - window_name: notes
     layout: tiled
     panes:
-      - cd ~/notes/notes-vault/ && v
+      - cd ~/notes/notes-vault/ && v .
