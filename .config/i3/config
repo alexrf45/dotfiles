@@ -142,7 +142,7 @@ bindsym $mod+r mode "resize"
 
 bar {
    position top
-   mode dock
+   mode hide
    font pango:Iosevka Nerd Font Regular 12
    height 22
    tray_output none

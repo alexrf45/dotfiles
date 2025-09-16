@@ -64,3 +64,4 @@ eval "$(starship init zsh)"
 source "/home/fr3d/.config/op/plugins.sh"
 
 #zprof > /tmp/zprof.out
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

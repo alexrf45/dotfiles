@@ -5,21 +5,37 @@ alias i='sudo apt install'
 alias h='cd ~'
 alias v='nvim'
 alias config='v ~/.vimrc'
+alias q='exit'
 alias edit='nvim'
 alias c="clear"
 alias get="curl -O -L"
 alias dir='exa'
+alias download='aria2c'
+
+#notes
+alias daily='bash $HOME/.config/scripts/daily.sh'
+
+#calender
+alias day='gcalcli'
+
+#apps
+alias pdf='zathura'
+alias spotify='ncspot -d ~/.local/ncspot.log'
+
+#web
+alias http='busybox httpd -f -p 8000'
+alias tor='docker run --rm --detach --name tor --publish 9050:9050 tor:local'
+#tmux & tmuxp
 alias t='tmux'
 alias dev='tmuxp load ~/.config/tmuxp/debian-desktop.yaml'
 alias kali='tmuxp load ~/.config/tmuxp/security.yaml'
 alias scrt-dev='tmuxp load ~/.config/tmuxp/scrt-dev.yaml'
-alias py='python3'
+
+#api
 alias weather='curl https://wttr.in'
 alias public='curl wtfismyip.com/text'
-alias q='exit'
-alias pdf='zathura'
-alias download='aria2c'
-alias spotify='ncspot -d ~/.local/ncspot.log'
+
+#vpn
 alias htb='sudo openvpn ~/.config/openvpn/lab_fr3d1eeT.ovpn'
 alias vpn='sudo openvpn ~/.config/openvpn/us-ny-599.protonvpn.udp.ovpn'
 
@@ -36,6 +52,7 @@ alias avu='aws-vault login $1'
 
 #python3
 
+alias py='python3'
 alias py-virt='python3 -m venv ./venv && source ./venv/bin/activate'
 alias freeze='pip freeze > requirements.txt'
 alias py-install='pip install -r requirements.txt'
