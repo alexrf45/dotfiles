@@ -152,11 +152,11 @@ bar {
       scroll.width=4 \
       disk.path=/home \
       playerctl.format='{{artist}}:{{title}}  {{duration(position)}}/{{duration(mpris:length)}}' \
-      -t greyish-powerline
+      -t iceberg-dark-powerline
    colors {
-             statusline #000000
-             background #000000
-             focused_workspace #00ff00 #000000 #00ff00
+             statusline #1d1f21
+             background #1d1f21
+             focused_workspace #81a2be #000000 #81a2be
          }
   }
 #
@@ -167,7 +167,7 @@ gaps outer 1
 smart_gaps on
 
 exec_always --no-startup-id vmware-user
-exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/dark_skulls.png
+exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/sky.png
 exec --no-startup-id "i3-msg 'workspace 1; exec kitty'"
 exec --no-startup-id "i3-msg 'workspace 2; exec brave-browser'"
 
