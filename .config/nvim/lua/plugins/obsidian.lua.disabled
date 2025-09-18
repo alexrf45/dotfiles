@@ -22,39 +22,25 @@ return {
         name = "personal",
         path = "/home/fr3d/notes/notes-vault",
       },
+      {
+        name = "fr3d",
+        path = "/home/fr3d/notes/fr3d",
+      },
     },
     daily_notes = {
       folder = "./",
-      date_format = "%Y-%m-%d",
+      date_format = "%Y%m%d%h%m%s%Z",
       alias_format = "%B %-d, %Y",
-      template = "templates/Daily_Note_Template",
+      default_tags = { "daily-notes" },
+      template = "templates/daily",
     },
     attachements = {
       img_folder = "images",
     },
     templates = {
-      folder = "templates",
-      date_format = "%Y-%m-%d-%a",
-      time_format = "%H:%M",
+      folder = "./templates",
     },
-    -- Function to customize front matter for new notes
-    note_frontmatter_func = function(note)
-      -- Add frontmatter fields to the note
-      local out = { id = note.id, aliases = note.aliases, tags = note.tags }
 
-      -- Add creation date
-      if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-        for k, v in pairs(note.metadata) do
-          out[k] = v
-        end
-      end
-
-      -- Add current date
-      out.date = os.date("%Y-%m-%d")
-      out.created = os.date("%Y-%m-%d %H:%M:%S")
-
-      return out
-    end,
     mappings = {
       -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
       ["gf"] = {

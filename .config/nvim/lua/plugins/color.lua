@@ -1,17 +1,29 @@
 return {
-  "projekt0n/github-nvim-theme",
-  name = "github-theme",
-  lazy = false, -- make sure we load this during startup if it is your main colorscheme
-  priority = 1000, -- make sure to load this before all the other start plugins
-  config = function()
-    require("github-theme").setup({
-      options = {
-        transparent = true, -- Disable setting bg (make neovim's background transparent)
-        terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
-        dim_inactive = true,
-      },
-    })
-
-    vim.cmd("colorscheme github_dark")
+  "armannikoyan/rusty",
+  lazy = false,
+  priority = 1000,
+  opts = {
+    transparent = false,
+    italic_comments = true,
+    underline_current_line = true,
+    colors = {
+      foreground = "#c5c8c6",
+      background = "#1d1f21",
+      selection = "#373b41",
+      line = "#282a2e",
+      comment = "#969896",
+      red = "#cc6666",
+      orange = "#de935f",
+      yellow = "#f0c674",
+      green = "#b5bd68",
+      aqua = "#8abeb7",
+      blue = "#81a2be",
+      purple = "#b294bb",
+      window = "#4d5057",
+    },
+  },
+  config = function(_, opts)
+    require("rusty").setup(opts)
+    vim.cmd("colorscheme rusty")
   end,
 }

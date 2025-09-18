@@ -107,18 +107,18 @@ format = " [🔧 $version]($style) "
 [kubernetes]
 format = '[k8s: $context \($namespace\)]($style) '
 disabled = false
-style = "bold green"
+style = "dimmed purple"
 
 
 [[kubernetes.contexts]]
 context_pattern = "^admin@osiris$"
 context_alias = "prod"
-style = "bold red"
+style = "dimmed red"
 
 [[kubernetes.contexts]]
 context_pattern = "^admin@anubis$"
 context_alias = "dev"
-style = "bold yellow"
+style = "dimmed yellow"
 
 [[kubernetes.contexts]]
 context_pattern = "^admin@horus$"

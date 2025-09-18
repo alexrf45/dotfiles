@@ -1,15 +1,11 @@
 return {
-  { "echasnovski/mini.pairs", enabled = false },
-  { "echasnovski/mini.ai", enabled = false },
   { "folke/noice.nvim", enabled = false },
   { "rcarriga/nvim-notify", enabled = false },
   { "catppuccin/nvim", enabled = false },
-  { "nvim-lualine/lualine.nvim", enabled = true },
+  { "nvim-lualine/lualine.nvim", enabled = false },
   { "folke/ts-comments.nvim", enabled = false },
   { "folke/flash.nvim", enabled = false },
   { "folke/persistence.nvim", enabled = false },
-  -- { "folke/todo-comments.nvim", enabled = false },
   { "windwp/nvim-ts-autotag", enabled = false },
   { "rafamadriz/friendly-snippets", enabled = true },
-  --     { "saghen/blink.cmp", enabled = false },
 }
