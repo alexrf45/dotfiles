@@ -27,9 +27,9 @@ alias portainerstart='docker start portainer'
 #gcp docker cli
 alias gcloud='docker run --rm --volumes-from gcloud-config gcr.io/google.com/cloudsdktool/google-cloud-cli gcloud'
 
+#helm
+alias helm='docker run --rm -it -v "$(pwd):$(pwd)" -w "$(pwd)" alpine/helm:3.19'
+
 
 #juiceshop docker container
 alias juiceshop='docker run --name juiceshop -d --rm -p 3000:3000 bkimminich/juice-shop'
-
-#terraform-docs
-#alias tf-docs='docker run --rm --volume "$(pwd):/terraform-docs" -u $(id -u) quay.io/terraform-docs/terraform-docs:0.20.0 markdown /terraform-docs'

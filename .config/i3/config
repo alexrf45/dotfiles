@@ -17,7 +17,7 @@ set $right semicolon
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -141,7 +141,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
-   position top
+   position bottom
    mode hide
    font pango:Iosevka Nerd Font Regular 12
    height 22
@@ -168,7 +168,7 @@ smart_gaps on
 
 exec_always --no-startup-id vmware-user
 exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/sky.png
-exec --no-startup-id "i3-msg 'workspace 1; exec kitty'"
+exec --no-startup-id "i3-msg 'workspace 1; exec alacritty'"
 exec --no-startup-id "i3-msg 'workspace 2; exec brave-browser'"
 
 bindsym $mod+p exec flameshot gui

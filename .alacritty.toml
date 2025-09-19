@@ -1,6 +1,6 @@
 
 [terminal.shell]
-program = "/usr/bin/bash"
+program = "/usr/bin/zsh"
 
 [env]
 TERM = "xterm-256color"
@@ -23,8 +23,8 @@ history = 20000
 [font]
 
 #normal = { family="Iosevka Nerd Font Mono" , style = "Bold"}
-#normal = { family="UbuntuMono Nerd Font" , style = ""}
-normal = { family="JetBrains Mono" , style = ""}
+normal = { family="UbuntuMono Nerd Font" , style = ""}
+#normal = { family="JetBrains Mono" , style = ""}
 
 size = 12
 
@@ -121,7 +121,7 @@ mods = "Shift"
 
 [general]
 import = [
-    "~/.config/alacritty/gms.toml" ]
+    "~/.config/alacritty/gruv.toml" ]
 
     [terminal]
 

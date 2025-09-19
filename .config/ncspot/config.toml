@@ -135,7 +135,7 @@ repeat = 'off'
 # search_match = "#fabd2f"
 #
 [theme]
-background = "#1d1f21"
+background = "#000000"
 primary = "#c5c8c6"
 secondary = "#7d8590"
 title = "#58a6ff"

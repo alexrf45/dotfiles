@@ -27,5 +27,4 @@ return {
       end,
     },
   },
-  { "nvim-mini/mini.statusline", version = "*" },
 }
