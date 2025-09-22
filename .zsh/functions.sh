@@ -1,3 +1,7 @@
+color-log() {
+  tail -f "$1" | grep --color=always -E "$2|$"
+}
+
 extract() {
   if [ -f "$1" ]; then
     case "$1" in

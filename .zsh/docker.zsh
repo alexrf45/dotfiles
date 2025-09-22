@@ -15,6 +15,8 @@ alias d-down='docker-compose down'
 
 #wipe all docker resources
 alias dnuke="docker stop $(docker ps -a -q); docker rm -f $(docker ps -a -q); docker rmi -f $(docker images -a -q); docker volume rm -f $(docker volume ls -q)"
+alias dnuke='docker system prune -af && docker volume prune -f'
+
 
 #lazydocker
 alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v /yourpath:/.config/jesseduffield/lazydocker lazyteam/lazydocker'
