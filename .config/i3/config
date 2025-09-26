@@ -3,10 +3,10 @@ set $mod mod4
 font pango:JetBrains Mono  10
 
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pipewire set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pipewire  set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pipewire set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pipewire set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 set $up l
 set $down k
@@ -141,24 +141,19 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
-   position bottom
-   mode hide
+   position top
+   mode dock
    font pango:Iosevka Nerd Font Regular 12
    height 22
    tray_output none
-   status_command /usr/bin/bumblebee-status \
-      -m disk battery time pasink pasource playerctl \
-      -p time.format="%d %B %Y %H:%M:%S"\
-      scroll.width=4 \
-      disk.path=/home \
-      playerctl.format='{{artist}}:{{title}}  {{duration(position)}}/{{duration(mpris:length)}}' \
-      -t gruvbox-powerline
+   status_command i3blocks -c ~/.config/i3/i3blocks.conf
    colors {
-             statusline #282828
-             background #282828
-             focused_workspace #81a2be #000000 #81a2be
+          statusline #282828
+          background #282828
+          focused_workspace #81a2be #000000 #81a2be
          }
   }
+
 #
 # i3-gaps
 for_window [class="^.*"] border pixel 0
@@ -168,8 +163,12 @@ smart_gaps on
 
 exec_always --no-startup-id vmware-user
 exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/gruvbox-solar-system.jpg
+
 exec --no-startup-id "i3-msg 'workspace 1; exec alacritty'"
 exec --no-startup-id "i3-msg 'workspace 2; exec brave-browser'"
+
+assign [class="alacritty"] $ws1
+assign [class="brave-browser"] $ws2
 
 bindsym $mod+p exec flameshot gui
 
