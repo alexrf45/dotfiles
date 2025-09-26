@@ -9,9 +9,10 @@ alias dnt='docker network'
 #unprivileged docker shell
 alias ds='docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" -u "$(id -u):$(id -g)" -it debian:13-slim'
 alias kali='docker run --tty --interactive kalilinux/kali-rolling /bin/bash'
+
 #docker compose
-alias d-up='docker-compose up -d'
-alias d-down='docker-compose down'
+alias dup='docker compose up -d'
+alias down='docker compose down'
 
 #wipe all docker resources
 alias dnuke="docker stop $(docker ps -a -q); docker rm -f $(docker ps -a -q); docker rmi -f $(docker images -a -q); docker volume rm -f $(docker volume ls -q)"

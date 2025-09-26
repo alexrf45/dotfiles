@@ -4,8 +4,12 @@ return {
   config = function()
     require("telekasten").setup({
       journal_auto_open = true,
+      command_palette_theme = "dropdown",
+      show_tags_theme = "dropdown",
       home = vim.fn.expand("~/notes/fr3d"),
-      dailies = vim.fn.expand("~/notes/fr3d"),
+      dailies = vim.fn.expand("~/notes/fr3d/daily"),
+      weeklies = vim.fn.expand("~/notes/fr3d/weekly"),
+      templates = vim.fn.expand("~/notes/fr3d/templates"),
       template_new_note = vim.fn.expand("~/notes/fr3d/templates/note.md"),
       template_new_daily = vim.fn.expand("~/notes/fr3d/templates/daily.md"),
       template_new_weekly = vim.fn.expand("~/notes/fr3d/templates/weekly.md"),

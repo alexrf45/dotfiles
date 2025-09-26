@@ -15,7 +15,7 @@ k9s:
       - homepage
       - cert-manager
   view:
-    active: context
+    active: pods
   featureGates:
-    nodeShell: false
+    nodeShell: true
   proxy: null
