@@ -109,27 +109,27 @@ repeat = 'off'
 # Other
 ######################################
 "Shift+q" = "quit"
-"Shift+z" = "quit"
 "?" = "help"
 "Shift+u" = "update"
 
 
-#Gruvbox dark [ originally based on base16 by Dawid Kurek (dawikur@gmail.com) ]
+#Gruvbox dark
+
 [theme]
-background = "default"
+background = "#32302f"
 primary = "#d4be98"
 secondary = "#928374"
-title = "#8ec07c"
-playing = "#689d6a"
-playing_bg = "#383838"
+title = "#a9b665"
+playing = "#89b482"
+playing_bg = "#32302f"
 playing_selected = "#ebdbb2"
 highlight = "#d5c4a1"
 highlight_bg = "#484848"
 error = "#fbf1c7"
 error_bg = "#cc241d"
-statusbar_progress = "#458588"
-statusbar_bg = "#282828"
-statusbar = "#98971a"
+statusbar_progress = "#a9b665"
+statusbar_bg = "#32302f"
+statusbar = "#a9b665"
 cmdline = "#d5c4a1"
 cmdline_bg = "#383838"
 search_match = "#fabd2f"
