@@ -143,13 +143,13 @@ bindsym $mod+r mode "resize"
 bar {
    position top
    mode dock
-   font pango:Iosevka Nerd Font Regular 12
+   font pango:Iosevka Nerd Font Regular 9
    height 22
    tray_output none
    status_command i3blocks -c ~/.config/i3/i3blocks.conf
    colors {
-          statusline #282828
-          background #282828
+          statusline #32302f
+          background #32302f
           focused_workspace #81a2be #000000 #81a2be
          }
   }
