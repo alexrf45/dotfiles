@@ -12,6 +12,10 @@ windows:
     layout: tiled
     panes:
       - ncspot -d ~/.local/ncspot.log
+  - window_name: radio
+    layout: tiled
+    panes:
+      - radio
   - window_name: local
     layout: tiled
     panes:
