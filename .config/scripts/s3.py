@@ -9,8 +9,9 @@ logger = logging.getLogger()
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s: %(levelname)s: %(message)s')
 
-BUCKET_NAME=input('Enter Bucket Name: ')
-AWS_REGION=input('Enter Desired region: ')
+BUCKET_NAME = input('Enter Bucket Name: ')
+AWS_REGION = input('Enter Desired region: ')
+
 
 def create_bucket():
     """Create an S3 bucket in a specified region
@@ -25,13 +26,14 @@ def create_bucket():
 
     # Create bucket
     session = boto3auth.Boto3Auth(AWS_REGION)
-    session.auth('s3', 'client' )
+    session.auth('s3', 'client')
     client = boto3.client("s3", region_name=AWS_REGION)
     response = client.create_bucket(
         ACL='private',
         Bucket=BUCKET_NAME,
         ObjectOwnership='BucketOwnerEnforced'
-        )
+    )
     logger.info(response)
+
 
 create_bucket()

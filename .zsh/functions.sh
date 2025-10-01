@@ -2,6 +2,15 @@ color-log() {
   tail -f "$1" | grep --color=always -E "$2|$"
 }
 
+http() {
+  busybox httpd -h "$HOME/webserver" -p "$1"
+}
+
+pdf() {
+
+  zathura "$1" &
+}
+
 extract() {
   if [ -f "$1" ]; then
     case "$1" in
@@ -104,6 +113,12 @@ nb() {
   aws s3 sync \
     --delete ~/notes/notes-vault/. \
     s3://notes-backup-primary
+}
+
+nb1() {
+  aws s3 sync \
+    --delete ~/notes/fr3d/. \
+    s3://fr3d-backup-2025
 }
 
 k9s() {

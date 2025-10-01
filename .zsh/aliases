@@ -19,11 +19,9 @@ alias daily='bash $HOME/.config/scripts/daily.sh'
 alias day='gcalcli'
 
 #apps
-alias pdf='zathura'
 alias spotify='ncspot -d ~/.local/ncspot.log'
 
 #web
-alias http='busybox httpd -f -p 8000'
 alias tor='docker run --rm --detach --name tor --publish 9050:9050 tor:local'
 #tmux & tmuxp
 alias t='tmux'
