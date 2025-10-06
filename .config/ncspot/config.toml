@@ -116,8 +116,8 @@ repeat = 'off'
 #Gruvbox dark
 
 [theme]
-background = "#32302f"
-primary = "#d4be98"
+background = "#000000"
+primary = "#cdcdcd"
 secondary = "#928374"
 title = "#a9b665"
 playing = "#89b482"
