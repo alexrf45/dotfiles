@@ -148,8 +148,8 @@ bar {
    tray_output none
    status_command i3blocks -c ~/.config/i3/i3blocks.conf
    colors {
-          statusline #32302f
-          background #32302f
+          statusline #252623
+          background #252623
           focused_workspace #81a2be #000000 #81a2be
          }
   }

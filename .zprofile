@@ -1,4 +1,4 @@
-export PATH="$PATH:$HOME/.local/bin:$GOROOT:$GOPATH:$HOME/.pulumi/bin:$HOME/.cargo/bin/:$HOME/.npm-global/bin:/sbin"
+export PATH="$PATH:$HOME/.local/bin:$GOROOT:$GOPATH:$HOME/.pulumi/bin:$HOME/.cargo/bin/:$HOME/.npm-global/bin:/sbin:$XDG_CONFIG_HOME/emacs"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export GOROOT="$HOME/.local/bin/go/bin"
 export GOPATH="$HOME/.config/go/bin"

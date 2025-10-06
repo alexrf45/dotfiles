@@ -1,4 +1,3 @@
-
 [terminal.shell]
 program = "/usr/bin/zsh"
 
@@ -121,7 +120,7 @@ mods = "Shift"
 
 [general]
 import = [
-    "~/.config/alacritty/gruv-soft.toml" ]
+    "~/.config/alacritty/v.toml" ]
 
     [terminal]
 
