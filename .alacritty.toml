@@ -120,7 +120,7 @@ mods = "Shift"
 
 [general]
 import = [
-    "~/.config/alacritty/v.toml" ]
+    "~/.config/alacritty/ever.toml" ]
 
     [terminal]
 

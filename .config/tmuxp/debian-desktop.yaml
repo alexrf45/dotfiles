@@ -1,9 +1,9 @@
 session_name: dev
 windows:
-  - window_name: home-ops
+  - window_name: khepri
     layout: tiled
     panes:
-      - cd ~/home-ops && v .
+      - cd ~/khepri/ && v .
   - window_name: k9s
     layout: tiled
     panes:

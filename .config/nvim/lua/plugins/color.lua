@@ -1,49 +1,61 @@
--- return {
---   "sainnhe/gruvbox-material",
---   lazy = false,
---   priority = 1000,
---   config = function()
---     -- Optionally configure and load the colorscheme
---     -- directly inside the plugin declaration.
---     vim.g.gruvbox_material_background = "soft"
---     vim.g.gruvbox_material_enable_italic = true
---     vim.g.gruvbox_material_better_performance = 1
---     vim.cmd.colorscheme("gruvbox-material")
---   end,
--- }
-
 return {
-  "vague2k/vague.nvim",
-  lazy = false, -- make sure we load this during startup if it is your main colorscheme
-  priority = 1000, -- make sure to load this before all the other plugins
-  config = function()
-    require("vague").setup({
-      colors = {
-        bg = "#000000",
-        inactiveBg = "#1c1c24",
-        fg = "#cdcdcd",
-        floatBorder = "#878787",
-        line = "#252530",
-        comment = "#606079",
-        builtin = "#b4d4cf",
-        func = "#c48282",
-        string = "#e8b589",
-        number = "#e0a363",
-        property = "#c3c3d5",
-        constant = "#aeaed1",
-        parameter = "#bb9dbd",
-        visual = "#333738",
-        error = "#d8647e",
-        warning = "#f3be7c",
-        hint = "#7e98e8",
-        operator = "#90a0b5",
-        keyword = "#6e94b2",
-        type = "#9bb4bc",
-        search = "#405065",
-        plus = "#7fa563",
-        delta = "#f3be7c",
+  "everviolet/nvim",
+  name = "evergarden",
+  priority = 1000, -- Colorscheme plugin is loaded first before any other plugins
+  opts = {
+    theme = {
+      variant = "fall", -- 'winter'|'fall'|'spring'|'summer'
+      accent = "red",
+    },
+    editor = {
+      transparent_background = false,
+      sign = { color = "none" },
+      float = {
+        color = "mantle",
+        solid_border = false,
       },
-    })
-    vim.cmd("colorscheme vague")
+      completion = {
+        color = "surface0",
+      },
+    },
+  },
+  config = function()
+    vim.cmd.colorscheme("evergarden")
   end,
 }
+
+-- return {
+--   "vague2k/vague.nvim",
+--   lazy = false, -- make sure we load this during startup if it is your main colorscheme
+--   priority = 1000, -- make sure to load this before all the other plugins
+--   config = function()
+--     require("vague").setup({
+--       colors = {
+--         bg = "#000000",
+--         inactiveBg = "#1c1c24",
+--         fg = "#cdcdcd",
+--         floatBorder = "#878787",
+--         line = "#252530",
+--         comment = "#606079",
+--         builtin = "#b4d4cf",
+--         func = "#c48282",
+--         string = "#e8b589",
+--         number = "#e0a363",
+--         property = "#c3c3d5",
+--         constant = "#aeaed1",
+--         parameter = "#bb9dbd",
+--         visual = "#333738",
+--         error = "#d8647e",
+--         warning = "#f3be7c",
+--         hint = "#7e98e8",
+--         operator = "#90a0b5",
+--         keyword = "#6e94b2",
+--         type = "#9bb4bc",
+--         search = "#405065",
+--         plus = "#7fa563",
+--         delta = "#f3be7c",
+--       },
+--     })
+--     vim.cmd("colorscheme vague")
+--   end,
+-- }
