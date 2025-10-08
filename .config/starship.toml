@@ -2,9 +2,9 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[╭─infra────❯](white) $kubernetes $terraform $aws $gcloud $azure
-[┣─project──❯](white) $directory$git_branch $git_status $git_commit $golang $python
-[╰](white)$character
+[╭─infra────❯](grey) $kubernetes $terraform $aws $gcloud $azure
+[┣─project──❯](grey) $directory$git_branch $git_status $git_commit $golang $python
+[╰](grey)$character
 """
 
 # Wait 10 milliseconds for starship to check files under the current directory.
