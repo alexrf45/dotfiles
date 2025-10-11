@@ -148,8 +148,8 @@ bar {
    tray_output none
    status_command i3blocks -c ~/.config/i3/i3blocks.conf
    colors {
-          statusline #000000
-          background #000000
+          statusline #00000000
+          background #00000000
           focused_workspace #81a2be #000000 #81a2be
          }
   }
@@ -163,6 +163,8 @@ smart_gaps on
 
 #exec_always --no-startup-id vmware-user
 exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/dark-waves.jpg
+
+exec_always --no-startup-id picom --config ~/.config/picom.conf -b
 
 exec --no-startup-id "i3-msg 'workspace 1; exec alacritty'"
 exec --no-startup-id "i3-msg 'workspace 2; exec brave-browser'"
