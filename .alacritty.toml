@@ -22,10 +22,10 @@ history = 20000
 [font]
 
 #normal = { family="Iosevka Nerd Font Mono" , style = ""}
-normal = { family="UbuntuMono Nerd Font" , style = ""}
-#normal = { family="JetBrains Mono" , style = ""}
+#normal = { family="UbuntuMono Nerd Font" , style = ""}
+normal = { family="JetBrains Mono" , style = ""}
 
-size = 12
+size = 11
 
 [selection]
 save_to_clipboard = true
@@ -120,7 +120,7 @@ mods = "Shift"
 
 [general]
 import = [
-    "~/.config/alacritty/nordic.toml" ]
+    "~/.config/alacritty/base16.toml" ]
 
 [terminal]
 
