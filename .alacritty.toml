@@ -23,7 +23,10 @@ history = 20000
 
 #normal = { family="Iosevka Nerd Font Mono" , style = ""}
 #normal = { family="UbuntuMono Nerd Font" , style = ""}
-normal = { family="JetBrains Mono" , style = ""}
+#normal = { family="JetBrains Mono" , style = ""}
+#normal = { family="FreeMono" , style = ""}
+#normal = { family="DejaVu Sans Mono" , style = ""}
+normal = { family="Anonymous Pro Minus" , style = "bold"}
 
 size = 11
 
