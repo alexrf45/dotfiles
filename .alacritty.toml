@@ -21,11 +21,9 @@ history = 20000
 
 [font]
 
-#normal = { family="Iosevka Nerd Font Mono" , style = ""}
+normal = { family="Iosevka Nerd Font Mono" , style = ""}
 #normal = { family="UbuntuMono Nerd Font" , style = ""}
-#normal = { family="FreeMono" , style = ""}
-#normal = { family="DejaVu Sans Mono" , style = ""}
-normal = { family="Anonymous Pro Minus" , style = "bold"}
+#normal = { family="Anonymous Pro Minus" , style = "bold"}
 
 size = 11
 
