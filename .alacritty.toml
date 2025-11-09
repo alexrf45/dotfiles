@@ -1,5 +1,5 @@
 [terminal.shell]
-program = "/usr/bin/bash"
+program = "/usr/bin/zsh"
 
 [env]
 TERM = "xterm-256color"
@@ -21,8 +21,8 @@ history = 20000
 
 [font]
 
-normal = { family="Iosevka Nerd Font Mono" , style = ""}
-#normal = { family="UbuntuMono Nerd Font" , style = ""}
+#normal = { family="Iosevka Nerd Font Mono" , style = ""}
+normal = { family="UbuntuMono Nerd Font" , style = ""}
 #normal = { family="Anonymous Pro Minus" , style = "bold"}
 
 size = 11
@@ -120,7 +120,7 @@ mods = "Shift"
 
 [general]
 import = [
-    "~/.config/alacritty/base16.toml" ]
+    "~/.config/alacritty/linux.toml" ]
 
 [terminal]
 
