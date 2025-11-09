@@ -163,7 +163,7 @@ gaps outer 6
 smart_gaps on
 
 #exec_always --no-startup-id vmware-user
-exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/dark-waves.jpg
+exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/skull.jpg
 
 exec_always --no-startup-id picom --config ~/.config/picom.conf -b
 
