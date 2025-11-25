@@ -158,8 +158,8 @@ bar {
 #
 # i3-gaps
 for_window [class="^.*"] border pixel 0
-gaps inner 12
-gaps outer 6
+gaps inner 4
+gaps outer 2
 smart_gaps on
 
 #exec_always --no-startup-id vmware-user

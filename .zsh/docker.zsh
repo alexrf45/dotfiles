@@ -31,7 +31,7 @@ alias portainerstart='docker start portainer'
 alias gcloud='docker run --rm --volumes-from gcloud-config gcr.io/google.com/cloudsdktool/google-cloud-cli gcloud'
 
 #helm
-alias helm='docker run --rm -it -v "$(pwd):$(pwd)" -w "$(pwd)" alpine/helm:3.19'
+#alias helm='docker run --rm -it -v "$(pwd):$(pwd)" -w "$(pwd)" alpine/helm:3.19'
 
 
 #juiceshop docker container
