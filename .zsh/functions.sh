@@ -1,3 +1,8 @@
+cheat-code() {
+
+  curl cheat.sh/"$1" | bat
+}
+
 color-log() {
   tail -f "$1" | grep --color=always -E "$2|$"
 }
