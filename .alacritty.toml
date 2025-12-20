@@ -21,9 +21,9 @@ history = 20000
 
 [font]
 
-#normal = { family="Iosevka Nerd Font Mono" , style = ""}
-normal = { family="UbuntuMono Nerd Font" , style = ""}
-#normal = { family="Anonymous Pro Minus" , style = "bold"}
+normal = { family="Iosevka Nerd Font Mono" , style = ""}
+#normal = { family="UbuntuMono Nerd Font" , style = ""}
+#normal = { family="Noto Sans Mono" , style = ""}
 
 size = 11
 
@@ -120,7 +120,7 @@ mods = "Shift"
 
 [general]
 import = [
-    "~/.config/alacritty/gruv-hard.toml" ]
+    "~/.config/alacritty/gruv-soft.toml" ]
 
 [terminal]
 

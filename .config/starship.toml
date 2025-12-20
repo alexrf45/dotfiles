@@ -111,18 +111,18 @@ style = "dimmed purple"
 
 
 [[kubernetes.contexts]]
-context_pattern = "^admin@osiris$"
-context_alias = "prod"
+context_pattern = "^admin@abydos$"
+context_alias = "test"
 style = "dimmed red"
 
 [[kubernetes.contexts]]
-context_pattern = "^admin@anubis$"
+context_pattern = "^admin@memphis$"
 context_alias = "dev"
 style = "dimmed yellow"
 
 [[kubernetes.contexts]]
 context_pattern = "^admin@horus$"
-context_alias = "testing"
+context_alias = "prod"
 style = "italic purple"
 
 [azure]
