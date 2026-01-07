@@ -139,3 +139,12 @@ tf-docs() {
     --volume "$(pwd):/terraform-docs" \
     -u "$(id -u)" quay.io/terraform-docs/terraform-docs:0.20.0 markdown /terraform-docs
 }
+
+doc2md() {
+  myfilename="$1"
+  pandoc \
+    -t markdown_strict \
+    --extract-media="./attachments/$myfilename" \
+    "$myfilename.docx" \
+    -o "$myfilename.md"
+}
