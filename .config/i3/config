@@ -162,7 +162,7 @@ gaps inner 4
 gaps outer 2
 smart_gaps on
 
-exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/skull.png
+exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/b-200.jpg
 
 exec_always --no-startup-id picom --config ~/.config/picom.conf -b
 
