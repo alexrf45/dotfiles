@@ -15,9 +15,6 @@ alias ls='ls --color'
 #notes
 alias daily='bash $HOME/.config/scripts/daily.sh'
 
-#calender
-alias day='gcalcli'
-
 #apps
 alias spotify='ncspot -d ~/.local/ncspot.log'
 
