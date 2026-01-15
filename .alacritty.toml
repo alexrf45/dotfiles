@@ -120,7 +120,7 @@ mods = "Shift"
 
 [general]
 import = [
-    "~/.config/alacritty/htb.toml" ]
+    "~/.config/alacritty/themes/themes/gruvbox_material_hard_dark.toml" ]
 
 [terminal]
 
