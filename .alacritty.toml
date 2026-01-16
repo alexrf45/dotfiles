@@ -21,8 +21,8 @@ history = 20000
 
 [font]
 
-normal = { family="Iosevka Nerd Font Mono" , style = "Bold"}
-#normal = { family="UbuntuMono Nerd Font" , style = ""}
+#normal = { family="Iosevka Nerd Font Mono" , style = "Bold"}
+normal = { family="UbuntuMono Nerd Font" , style = ""}
 #normal = { family="Noto Sans Mono" , style = ""}
 
 size = 11

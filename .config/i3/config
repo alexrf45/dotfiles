@@ -143,7 +143,7 @@ bindsym $mod+r mode "resize"
 bar {
    position top
    mode dock
-   font pango:Anonymous Pro 10
+   font pango:UbuntuMono Nerd Font 10
    height 17
    tray_output none
    i3bar_command i3bar --transparency
@@ -162,7 +162,7 @@ gaps inner 4
 gaps outer 2
 smart_gaps on
 
-exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/hyper.png
+exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/gruvbox-solar-system.jpg
 
 exec_always --no-startup-id picom --config ~/.config/picom.conf -b
 
