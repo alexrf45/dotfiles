@@ -92,9 +92,9 @@ web-server() {
     -c monokai \
     -p 8001 \
     --header "Cache-Control:no-cache" \
-    --auth-file ~/home-lab/auth.txt \
-    --tls-cert "$HOME/.local/dev-cert.pem" \
-    --tls-key "$HOME/.local/dev-key.pem" \
+    --auth-file "$HOME/.local/auth.txt" \
+    --tls-cert "$HOME/.local/certs/cert.pem" \
+    --tls-key "$HOME/.local/certs/key.pem" \
     -u
 }
 

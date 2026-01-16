@@ -3,19 +3,11 @@ windows:
   - window_name: khepri
     layout: tiled
     panes:
-      - cd ~/khepri/ && v .
+      - cd ~/home-ops/ && v .
   - window_name: k9s
     layout: tiled
     panes:
       - k9s
-  - window_name: spotify
-    layout: tiled
-    panes:
-      - ncspot -d ~/.local/ncspot.log
-  - window_name: local
-    layout: tiled
-    panes:
-      - calendar
   - window_name: notes
     layout: tiled
     panes:
