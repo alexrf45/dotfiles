@@ -149,8 +149,8 @@ bar {
    i3bar_command i3bar --transparency
    status_command i3blocks -c ~/.config/i3/i3blocks.conf
    colors {
-          statusline #bf000000
-          background #bf000000
+          statusline #32302f
+          background #32302f
           focused_workspace #81a2be #000000 #81a2be
          }
   }
