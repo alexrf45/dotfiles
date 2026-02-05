@@ -188,5 +188,7 @@ exec_always --no-startup-id xset -dpms
 
 exec_always --no-startup-id xset s noblank
 
+exec --no-startup-id rclone mount remote:linux_laptop ~/ProtonDrive --vfs-cache-mode full &
+
 workspace 1 output HDMI-1
 #workspace 2 output eDP-1

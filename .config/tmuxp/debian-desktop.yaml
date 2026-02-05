@@ -12,3 +12,7 @@ windows:
     layout: tiled
     panes:
       - cd ~/fr3d/ && v .
+  - window_name: pve
+    layout: tiled
+    panes:
+      - pvetui
