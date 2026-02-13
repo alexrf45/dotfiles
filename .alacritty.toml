@@ -21,8 +21,8 @@ history = 20000
 
 [font]
 
-normal = { family="Iosevka Nerd Font Mono" , style = "Bold"}
-#normal = { family="UbuntuMono Nerd Font" , style = ""}
+#normal = { family="Iosevka Nerd Font Mono" , style = "Bold"}
+normal = { family="UbuntuMono Nerd Font" , style = ""}
 #normal = { family="Noto Sans Mono" , style = ""}
 
 size = 11
@@ -120,9 +120,9 @@ mods = "Shift"
 
 [general]
 import = [
-  #"~/.config/alacritty/themes/themes/gruvbox_material_hard_dark.toml" ]
+  #  "~/.config/alacritty/themes/themes/nord.toml" ]
 
-    "~/.config/alacritty/moonfly.toml" ]
+  "~/.config/alacritty/nord.toml" ]
 [terminal]
 
 

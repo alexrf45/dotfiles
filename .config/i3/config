@@ -142,7 +142,7 @@ bindsym $mod+r mode "resize"
 
 bar {
    position top
-   mode dock
+   mode hide
    font pango:UbuntuMono Nerd Font 10
    height 17
    tray_output none
@@ -150,7 +150,7 @@ bar {
    status_command i3blocks -c ~/.config/i3/i3blocks.conf
    colors {
           statusline #32302f
-          background #32302f
+          background #080808
           focused_workspace #81a2be #000000 #81a2be
          }
   }
@@ -162,7 +162,7 @@ gaps inner 4
 gaps outer 2
 smart_gaps on
 
-exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/skull.png
+exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/sky.png
 
 exec_always --no-startup-id picom --config ~/.config/picom.conf -b
 
