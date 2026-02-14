@@ -149,8 +149,8 @@ bar {
    i3bar_command i3bar --transparency
    status_command i3blocks -c ~/.config/i3/i3blocks.conf
    colors {
-          statusline #32302f
-          background #080808
+          statusline #202020
+          background #202020
           focused_workspace #81a2be #000000 #81a2be
          }
   }
@@ -162,7 +162,7 @@ gaps inner 4
 gaps outer 2
 smart_gaps on
 
-exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/sky.png
+exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/pictures/gruv.jpeg
 
 exec_always --no-startup-id picom --config ~/.config/picom.conf -b
 

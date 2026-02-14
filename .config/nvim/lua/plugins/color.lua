@@ -3,7 +3,7 @@ return {
   lazy = false,
   priority = 1000,
   config = function()
-    vim.cmd.colorscheme("base16-nord")
+    vim.cmd.colorscheme("base16-gruvbox-material-dark-hard")
     --   require("base16-colorscheme").setup({
     --     base00 = "#000000", -- Default background (Tango black)
     --     base01 = "#555753", -- Lighter background (Tango bright black)
