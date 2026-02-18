@@ -11,7 +11,11 @@ alias c="clear"
 alias get="curl -O -L"
 alias dir='exa'
 alias download='aria2c'
-alias ls='ls --color'
+alias l="ls -lh --color=auto --group-directories-first"
+alias ls="ls -h --color=auto --group-directories-first"
+alias la="ls -lah --color=auto --group-directories-first"
+alias lsblk="lsblk | bat -l conf -p"
+alias sensors="sensors | bat -l cpuinfo -p"
 #notes
 alias daily='bash $HOME/.config/scripts/daily.sh'
 
