@@ -122,7 +122,7 @@ mods = "Shift"
 import = [
   #  "~/.config/alacritty/themes/themes/nord.toml" ]
 
-  "~/.config/alacritty/gruv.toml" ]
+  "~/.config/alacritty/moonfly.toml" ]
 [terminal]
 
 
