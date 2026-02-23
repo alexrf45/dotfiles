@@ -24,11 +24,22 @@
 --     --   })
 --   end,
 -- }
+-- return {
+--   "ferrissushi/ferriouscolor.nvim",
+--   lazy = false,
+--   priority = 1000,
+--   config = function()
+--     vim.cmd.colorscheme("ferriouscolor")
+--   end,
+-- }
 return {
-  "ferrissushi/ferriouscolor.nvim",
+  "xeind/nightingale.nvim",
   lazy = false,
   priority = 1000,
   config = function()
-    vim.cmd.colorscheme("ferriouscolor")
+    require("nightingale").setup({
+      transparent = false, -- set to true for transparent background
+    })
+    vim.cmd("colorscheme nightingale")
   end,
 }
