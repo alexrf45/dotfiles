@@ -3,7 +3,7 @@ windows:
   - window_name: notes
     layout: tiled
     panes:
-      - cd ~/notes/notes-vault/ && v
+      - cd ~/fr3d && v
   - window_name: kali
     layout: tiled
     panes:
@@ -12,10 +12,6 @@ windows:
     layout: tiled
     panes:
       - btop
-  - window_name: spotify
-    layout: tiled
-    panes:
-      - ncspot
   - window_name: vpn
     layout: tiled
     panes:

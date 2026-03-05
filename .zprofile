@@ -1,7 +1,8 @@
 export PATH="$PATH:$HOME/.local/bin:$GOROOT:$GOPATH:$HOME/.pulumi/bin:$HOME/.cargo/bin/:$HOME/.npm-global/bin:/sbin:$XDG_CONFIG_HOME/emacs"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export SLIMPATH="$HOME/.local/bin/slim"
 export GOROOT="$HOME/.local/bin/go"
-export GOPATH="$HOME/.config/go/bin"
+export GOPATH="$HOME/.local/bin/go/bin"
 export GOPROXY=https://proxy.golang.org,direct
 export GOSUMDB="sum.golang.org"
 export RUSTUP_HOME="$HOME/.rustup"

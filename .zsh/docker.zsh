@@ -8,7 +8,7 @@ alias dnt='docker network'
 
 #unprivileged docker shell
 alias ds='docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" -u "$(id -u):$(id -g)" -it debian:13-slim'
-alias kali='docker run --tty --interactive kalilinux/kali-rolling /bin/bash'
+alias kali-root='docker run --tty --interactive kalilinux/kali-rolling /bin/bash'
 
 #docker compose
 alias dup='docker compose up -d'
