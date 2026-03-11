@@ -16,7 +16,6 @@ setopt PROMPT_SUBST
 unsetopt beep
 setopt HIST_IGNORE_SPACE
 
-alias jrnl=" jrnl"
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
@@ -74,8 +73,6 @@ miniplug load
 fpath=($HOME/.miniplug/plugins/zsh-users/zsh-completions/src $fpath)
 
 source <(kubectl completion zsh)
-
-compdef _kubectl k
 
 . "$HOME/.cargo/env"
 

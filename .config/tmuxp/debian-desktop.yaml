@@ -1,4 +1,4 @@
-session_name: dev
+session_name: home-lab
 windows:
   - window_name: home-ops
     layout: tiled

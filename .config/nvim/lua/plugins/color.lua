@@ -24,22 +24,23 @@
 --     --   })
 --   end,
 -- }
--- return {
---   "ferrissushi/ferriouscolor.nvim",
---   lazy = false,
---   priority = 1000,
---   config = function()
---     vim.cmd.colorscheme("ferriouscolor")
---   end,
--- }
 return {
-  "xeind/nightingale.nvim",
+  "loctvl842/monokai-pro.nvim",
   lazy = false,
   priority = 1000,
   config = function()
-    require("nightingale").setup({
-      transparent = false, -- set to true for transparent background
-    })
-    vim.cmd("colorscheme nightingale")
+    require("monokai-pro").setup()
+    vim.cmd.colorscheme("monokai-pro-machine")
   end,
 }
+-- return {
+--   "xeind/nightingale.nvim",
+--   lazy = false,
+--   priority = 1000,
+--   config = function()
+--     require("nightingale").setup({
+--       transparent = false, -- set to true for transparent background
+--     })
+--     vim.cmd("colorscheme nightingale")
+--   end,
+-- }
