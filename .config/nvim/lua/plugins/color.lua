@@ -1,45 +1,67 @@
--- return {
---   "RRethy/base16-nvim",
---   lazy = false,
---   priority = 1000,
---   config = function()
---     vim.cmd.colorscheme("base16-gruvbox-material-dark-hard")
---     --   require("base16-colorscheme").setup({
---     --     base00 = "#000000", -- Default background (Tango black)
---     --     base01 = "#555753", -- Lighter background (Tango bright black)
---     --     base02 = "#555753", -- Selection background
---     --     base03 = "#888a85", -- Comments, line numbers
---     --     base04 = "#babdb6", -- Dark foreground
---     --     base05 = "#d3d7cf", -- Default foreground (Tango white)
---     --     base06 = "#eeeeec", -- Light foreground (Tango bright white)
---     --     base07 = "#eeeeec", -- Light background
---     --     base08 = "#ef2929", -- Red (variables, errors)
---     --     base09 = "#fcaf3e", -- Orange (integers, constants)
---     --     base0A = "#fce94f", -- Yellow (classes, search)
---     --     base0B = "#8ae234", -- Green (strings)
---     --     base0C = "#34e2e2", -- Cyan (regex, support)
---     --     base0D = "#729fcf", -- Blue (functions, methods)
---     --     base0E = "#ad7fa8", -- Magenta (keywords)
---     --     base0F = "#c4a000", -- Brown (deprecated)
---     --   })
---   end,
--- }
 return {
-  "loctvl842/monokai-pro.nvim",
+  "slugbyte/lackluster.nvim",
   lazy = false,
   priority = 1000,
   config = function()
-    require("monokai-pro").setup()
-    vim.cmd.colorscheme("monokai-pro-machine")
+    vim.cmd.colorscheme("lackluster-dark")
+    -- vim.cmd.colorscheme("lackluster-hack") -- my favorite
+    -- vim.cmd.colorscheme("lackluster-mint")
   end,
 }
+
 -- return {
 --   "xeind/nightingale.nvim",
 --   lazy = false,
 --   priority = 1000,
 --   config = function()
 --     require("nightingale").setup({
---       transparent = false, -- set to true for transparent background
+--       transparent = false,
+--       colors = {
+--         theme = {
+--           nightingale = {
+--             ui = {
+--               bg = "#32302f", -- gruvbox-material dark soft main bg
+--               bg_dim = "#2a2827", -- slightly darker for dim areas
+--               bg_gutter = "#32302f", -- gutter matches main bg
+--               bg_m3 = "#282625",
+--               bg_m2 = "#2c2a29",
+--               bg_m1 = "#2f2d2c",
+--               bg_p1 = "#3c3836", -- gruvbox dark1 - cursorline, selections
+--               bg_p2 = "#504945", -- gruvbox dark2 - visual, deeper UI
+--               float = {
+--                 bg = "#2c2a29",
+--                 bg_border = "#3c3836",
+--               },
+--               pmenu = {
+--                 bg = "#2c2a29",
+--                 bg_sel = "#3c3836",
+--                 bg_sbar = "#32302f",
+--                 bg_thumb = "#504945",
+--               },
+--             },
+--           },
+--         },
+--       },
+--       overrides = function(colors)
+--         local theme = colors.theme
+--         return {
+--           -- Reinforce the lighter background on core groups
+--           Normal = { bg = theme.ui.bg },
+--           NormalNC = { bg = theme.ui.bg_dim },
+--           NormalFloat = { bg = theme.ui.float.bg },
+--           SignColumn = { bg = theme.ui.bg },
+--           FoldColumn = { bg = theme.ui.bg },
+--           CursorLine = { bg = theme.ui.bg_p1 },
+--           CursorLineNr = { bg = theme.ui.bg_p1 },
+--           ColorColumn = { bg = theme.ui.bg_p1 },
+--           StatusLine = { bg = "#3c3836" },
+--           StatusLineNC = { bg = "#32302f" },
+--           WinSeparator = { fg = "#504945", bg = "NONE" },
+--           TabLine = { bg = "#2c2a29" },
+--           TabLineFill = { bg = "#2c2a29" },
+--           TabLineSel = { bg = "#32302f" },
+--         }
+--       end,
 --     })
 --     vim.cmd("colorscheme nightingale")
 --   end,

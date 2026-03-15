@@ -23,10 +23,10 @@ alias daily='bash $HOME/.config/scripts/daily.sh'
 alias code-auth='export CLAUDE_CODE_OAUTH_TOKEN=$(op read "op://Private/claude_api_token/credential")'
 
 #apps
-alias spotify='ncspot -d ~/.local/ncspot.log'
+alias spotify='spotify_player'
 
 #web
-alias tor='docker run --rm --detach --name tor --publish 9050:9050 tor:local'
+alias tor='docker run --rm --detach --name tor --publish 127.0.0.1:9050:9050 tor:local'
 #tmux & tmuxp
 alias t='tmux'
 alias dev='tmuxp load ~/.config/tmuxp/debian-desktop.yaml'
