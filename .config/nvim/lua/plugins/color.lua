@@ -1,12 +1,14 @@
 return {
-  "slugbyte/lackluster.nvim",
-  lazy = false,
-  priority = 1000,
-  config = function()
-    vim.cmd.colorscheme("lackluster-dark")
-    -- vim.cmd.colorscheme("lackluster-hack") -- my favorite
-    -- vim.cmd.colorscheme("lackluster-mint")
-  end,
+  -- add gruvbox
+  { "ellisonleao/gruvbox.nvim" },
+
+  -- Configure LazyVim to load gruvbox
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "gruvbox",
+    },
+  },
 }
 
 -- return {
