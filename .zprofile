@@ -14,7 +14,7 @@ export AWS_VAULT_BACKEND=pass
 export AWS_PAGER=
 export AWS_CLI_AUTO_PROMPT=on-partial
 export GPG_TTY=$(tty)
-
+export GTK_IM_MODULE=xim
 export MINIPLUG_HOME="$HOME/.miniplug/plugins"
 export SHELL=/usr/bin/zsh
 export EDITOR=nvim

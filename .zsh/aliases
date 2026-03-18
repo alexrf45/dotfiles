@@ -18,6 +18,8 @@ alias lsblk="lsblk | bat -l conf -p"
 alias sensors="sensors | bat -l cpuinfo -p"
 #notes
 alias daily='bash $HOME/.config/scripts/daily.sh'
+alias web='bash $HOME/.config/scripts/firefox-esr.sh'
+alias brave='bash $HOME/.config/scripts/brave.sh'
 
 #claude code auth
 alias code-auth='export CLAUDE_CODE_OAUTH_TOKEN=$(op read "op://Private/claude_api_token/credential")'
