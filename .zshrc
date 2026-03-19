@@ -68,6 +68,7 @@ source "$HOME/.miniplug/plugins/miniplug.zsh"
 miniplug plugin 'zsh-users/zsh-syntax-highlighting'
 miniplug plugin 'zsh-users/zsh-autosuggestions'
 miniplug plugin 'zsh-users/zsh-completions'
+miniplug theme 'dracula/zsh'
 miniplug load
 
 fpath=($HOME/.miniplug/plugins/zsh-users/zsh-completions/src $fpath)
@@ -83,7 +84,7 @@ eval "$(fzf --zsh)"
 
 eval "$(zoxide init zsh)"
 
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"
 
 source "/home/fr3d/.config/op/plugins.sh"
 

@@ -33,7 +33,7 @@ alias tor='docker run --rm --detach --name tor --publish 127.0.0.1:9050:9050 tor
 alias t='tmux'
 alias dev='tmuxp load ~/.config/tmuxp/debian-desktop.yaml'
 alias kali='tmuxp load ~/.config/tmuxp/security.yaml'
-alias scrt-dev='tmuxp load ~/.config/tmuxp/scrt-dev.yaml'
+alias dev='tmuxp load ~/.config/tmuxp/dev.yaml'
 
 #api
 alias weather='curl https://wttr.in'
