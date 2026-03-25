@@ -8,5 +8,4 @@ return {
   { "folke/persistence.nvim", enabled = false },
   { "windwp/nvim-ts-autotag", enabled = false },
   { "rafamadriz/friendly-snippets", enabled = true },
-  { "folke/tokyonight.nvim", enabled = false },
 }
