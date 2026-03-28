@@ -33,32 +33,15 @@ bindkey '^X^E' edit-command-line
 
 autoload -Uz add-zsh-hook
 
-function auto_venv() {
-  # If already in a virtualenv, do nothing
-  if [[ -n "$VIRTUAL_ENV" && "$PWD" != *"${VIRTUAL_ENV:h}"* ]]; then
-    deactivate
-    return  
-  fi
-
-  [[ -n "$VIRTUAL_ENV" ]] && return
-
-  local dir="$PWD"
-  while [[ "$dir" != "/" ]]; do
-    if [[ -f "$dir/venv/bin/activate" ]]; then
-      source "$dir/venv/bin/activate"
-      return
-    fi
-    dir="${dir:h}"
-  done
-}
-
-add-zsh-hook chpwd auto_venv
 
 source "$HOME/.zprofile"
 
 for file in $HOME/.zsh/*; do
     source "$file"
 done
+
+
+add-zsh-hook chpwd auto_venv
 
 autoload -Uz colors; colors
 autoload -Uz compinit && compinit
