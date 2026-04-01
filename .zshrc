@@ -24,7 +24,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ffffff,standout"
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="20"
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="10"
 ZSH_AUTOSUGGEST_USE_ASYNC=1
 
 autoload -Uz edit-command-line

@@ -26,6 +26,8 @@ export KUBECONFIG="$HOME/.kube/config"
 export KUBECTL_KUBERC=true
 export KUBE_EDITOR=nvim
 export DRACULA_ARROW_ICON="$ "
+export DRACULA_DISPLAY_NEW_LINE=1
+export DRACULA_CUSTOM_VARIABLE=$AWS_VAULT
 ## FZF
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --color=fg:-1,fg+:#d0d0d0,bg:-1,bg+:#262626
