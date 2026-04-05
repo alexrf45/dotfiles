@@ -121,7 +121,7 @@ mods = "Shift"
 [general]
 import = [
 
-  "~/.config/alacritty/default.toml" ]
+  "~/.config/alacritty/white.toml" ]
 [terminal]
 
 

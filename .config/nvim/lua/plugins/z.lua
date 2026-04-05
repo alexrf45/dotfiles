@@ -8,10 +8,10 @@ return {
       show_tags_theme = "dropdown",
       tag_notation = "yaml-bare",
       home = vim.fn.expand("~/fr3d"),
-      dailies = vim.fn.expand("~/fr3d/daily"),
-      weeklies = vim.fn.expand("~/fr3d/weekly"),
+      dailies = vim.fn.expand("~/fr3d"),
+      weeklies = vim.fn.expand("~/fr3d"),
       templates = vim.fn.expand("~/fr3d/templates"),
-      template_new_note = vim.fn.expand("~/fr3d/templates/inbox.md"),
+      template_new_note = vim.fn.expand("~/fr3d/templates/note.md"),
       template_new_daily = vim.fn.expand("~/fr3d/templates/daily.md"),
       template_new_weekly = vim.fn.expand("~/fr3d/templates/weekly.md"),
       image_subdir = vim.fn.expand("~/fr3d/media/images"),
@@ -25,9 +25,9 @@ return {
         local title = vim.fn.input("Note title: ")
         if title == "" then return end
         local uuid = os.date("%Y%m%d%H%M")
-        local path = vim.fn.expand("~/fr3d/inbox/") .. uuid .. ".md"
+        local path = vim.fn.expand("~/fr3d/") .. uuid .. ".md"
         local rfc3339 = os.date("%Y-%m-%dT%H:%M:%SZ")
-        local template = io.open(vim.fn.expand("~/fr3d/templates/inbox.md"), "r")
+        local template = io.open(vim.fn.expand("~/fr3d/templates/note.md"), "r")
         local content = template:read("*a")
         template:close()
         content = content:gsub("{{title}}", title)
@@ -43,7 +43,7 @@ return {
         local title = vim.fn.input("Poem title: ")
         if title == "" then return end
         local uuid = os.date("%Y%m%d%H%M")
-        local path = vim.fn.expand("~/fr3d/inbox/") .. uuid .. ".md"
+        local path = vim.fn.expand("~/fr3d/") .. uuid .. ".md"
         local rfc3339 = os.date("%Y-%m-%dT%H:%M:%SZ")
         local template = io.open(vim.fn.expand("~/fr3d/templates/poem.md"), "r")
         local content = template:read("*a")
