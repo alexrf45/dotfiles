@@ -16,7 +16,7 @@ blue = "#ffffff"
 magenta = "#ffffff"
 yellow = "#ffffff"
 red = "#ff6b6b"
-green = "#ffffff"
+green = "#008000"
 
 [colors.bright]
 black = "#888888"
@@ -26,7 +26,7 @@ blue = "#ffffff"
 magenta = "#ffffff"
 yellow = "#ffffff"
 red = "#ff6b6b"
-green = "#ffffff"
+green = "#008000"
 
 [colors.selection]
 text = "#ffffff"

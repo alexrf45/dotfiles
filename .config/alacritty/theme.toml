@@ -1,33 +1,33 @@
 # Put the following lines in your ~/.config/alacritty/alacritty.toml
 
-[colors.cursor]
-cursor = "#dcdccc"
-text = "#383838"
-
-[colors.bright]
-black = "#6f6f6f"
-white = "#ffffff"
-cyan = "#93e0e3"
-blue = "#7cb8bb"
-magenta = "#dc8cc3"
-red = "#dca3a3"
-yellow = "#e0cf9f"
-green = "#5f7f5f"
-
 [colors.primary]
-foreground = "#dcdccc"
-background = "#383838"
+background = "#000000"
+foreground = "#cccccc"
 
 [colors.selection]
-text = "#dca3a3"
-background = "#606060"
+background = "#1d414d"
+text = "#f8f8f8"
+
+[colors.cursor]
+text = "#000000"
+cursor = "#cccccc"
+
+[colors.bright]
+black = "#767676"
+cyan = "#7c9cae"
+white = "#f8f8f8"
+blue = "#8eccdd"
+magenta = "#b98eb2"
+yellow = "#b99353"
+red = "#d88568"
+green = "#83a471"
 
 [colors.normal]
-black = "#383838"
-white = "#dcdccc"
-cyan = "#93e0e3"
-blue = "#7cb8bb"
-magenta = "#dc8cc3"
-red = "#dca3a3"
-yellow = "#e0cf9f"
-green = "#5f7f5f"
+black = "#000000"
+cyan = "#7c9cae"
+white = "#cccccc"
+blue = "#8eccdd"
+magenta = "#b98eb2"
+yellow = "#b99353"
+red = "#d88568"
+green = "#83a471"
