@@ -149,37 +149,4 @@ doc2md() {
     -o "$myfilename.md"
 }
 
-kube() {
-  local env="${1:-dev}"
-  shift
-  op run --env-file="$HOME/home-0ps.com/terraform/${env}/${env}.env" -- \
-    bash -c 'kubectl --kubeconfig <(printenv KUBECONFIG_DATA) "$@"' _ "$@"
-}
-
-k9s-op() {
-  local env="${1:-dev}"
-  shift
-  op run --env-file="$HOME/home-0ps.com/terraform/${env}/${env}.env" -- \
-    bash -c 'k9s --kubeconfig <(printenv KUBECONFIG_DATA) "$@"' _ "$@"
-}
-
-kube-op() {
-  local env="${1:-dev}"
-  local cmd="${2}"
-  shift 2
-  local kubedata
-  kubedata=$(op read "$(grep KUBECONFIG_DATA "$HOME/home-0ps.com/terraform/${env}/${env}.env" | cut -d= -f2)" --no-newline)
-
-  tmpfile=$(mktemp /dev/shm/kubeconfig.XXXXXX)
-  chmod 600 "$tmpfile"
-  trap 'rm -f $tmpfile' EXIT INT TERM
-  echo "$kubedata" >"$tmpfile"
-  export KUBECONFIG="$tmpfile"
-
-  "$cmd" "$@"
-}
-
-# Usage:
-# kube-op dev kubectl get nodes
-# kube-op prod k9s
-# kube-op test helm list -A
+# kube / k9s-op / k8sop now live in ~/.zsh/kubeop.sh

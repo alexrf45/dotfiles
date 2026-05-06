@@ -67,7 +67,7 @@ eval "$(fzf --zsh)"
 
 eval "$(zoxide init zsh)"
 
-#eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 
 source "/home/fr3d/.config/op/plugins.sh"
 

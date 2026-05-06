@@ -121,7 +121,7 @@ mods = "Shift"
 [general]
 import = [
 
-  "~/.config/alacritty/night.toml" ]
+  "~/.config/alacritty/theme1.toml" ]
 [terminal]
 
 
