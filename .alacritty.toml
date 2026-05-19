@@ -25,7 +25,7 @@ history = 20000
 normal = { family="UbuntuMono Nerd Font" , style = ""}
 #normal = { family="Noto Sans Mono" , style = ""}
 
-size = 11
+size = 10
 
 [selection]
 save_to_clipboard = true
@@ -121,7 +121,7 @@ mods = "Shift"
 [general]
 import = [
 
-  "~/.config/alacritty/linux.toml" ]
+  "~/.config/alacritty/venom.toml" ]
 [terminal]
 
 
