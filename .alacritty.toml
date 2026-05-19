@@ -121,7 +121,7 @@ mods = "Shift"
 [general]
 import = [
 
-  "~/.config/alacritty/theme2.toml" ]
+  "~/.config/alacritty/linux.toml" ]
 [terminal]
 
 

@@ -3,7 +3,7 @@ return {
   lazy = false,
   priority = 1000,
   config = function()
-    vim.cmd.colorscheme("base16-synth-midnight-dark")
+    vim.cmd.colorscheme("base16-linux-vt")
     --
   end,
 }

@@ -2,10 +2,8 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[╭─k8s──────❯](white) $kubernetes $terraform $docker_context
-[┣─cloud────❯](white) $aws $gcloud $azure
-[┣─project──❯](white) $directory$git_branch $git_status $git_commit
-[┣─language──❯](white) $golang $python
+[╭─infra────❯](white) $kubernetes $terraform $aws $gcloud $azure
+[┣─project──❯](white) $directory$git_branch $git_status $git_commit $golang $python
 [╰](white)$character
 """
 
@@ -20,7 +18,7 @@ read_only = " 🔒"
 home_symbol = "~"
 truncation_length = 3
 truncate_to_repo = true # truncates directory to root folder if in github repo
-style = "grey"
+style = "dimmed blue"
 
 
 [character]
@@ -36,6 +34,14 @@ utc_time_offset = "-5"
 
 [custom.tztime]
 command = 'date +"%a %b %d %Y %T"'
+disabled = true
+when = "true"
+format = ' [\[🕙 $symbol($output)\]]($style)'
+style = "bold white"
+
+[custom.vpn]
+command = "ip addr show | grep -E '^[0-9]+: (tun|tap|wg)' -A 2 | grep 'inet ' | head -1 | awk '{print $2}' | cut -d'/' -f1"
+disabled = false
 when = "true"
 format = ' [\[🕙 $symbol($output)\]]($style)'
 style = "bold white"
@@ -101,21 +107,22 @@ format = " [🔧 $version]($style) "
 [kubernetes]
 format = '[k8s: $context \($namespace\)]($style) '
 disabled = false
-style = "bold green"
+style = "dimmed purple"
+
 
 [[kubernetes.contexts]]
-context_pattern = "^admin@prod$"
-context_alias = "prod"
-style = "bold red"
+context_pattern = "^admin@abydos$"
+context_alias = "test"
+style = "dimmed red"
 
 [[kubernetes.contexts]]
-context_pattern = "^admin@anubis$"
+context_pattern = "^admin@memphis$"
 context_alias = "dev"
-style = "bold yellow"
+style = "dimmed yellow"
 
 [[kubernetes.contexts]]
 context_pattern = "^admin@horus$"
-context_alias = "testing"
+context_alias = "prod"
 style = "italic purple"
 
 [azure]
