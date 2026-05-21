@@ -57,6 +57,8 @@ miniplug load
 fpath=($HOME/.miniplug/plugins/zsh-users/zsh-completions/src $fpath)
 
 source <(kubectl completion zsh)
+source <(scrt completion zsh)
+
 
 . "$HOME/.cargo/env"
 
