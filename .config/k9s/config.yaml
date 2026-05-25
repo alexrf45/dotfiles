@@ -13,7 +13,7 @@ k9s:
     crumbsless: true
     noIcons: false
     reactive: true
-    skin: transparent
+    skin: catppuccin-mocha-transparent
     defaultsToFullScreen: true
   skipLatestRevCheck: false
   disablePodCounting: false

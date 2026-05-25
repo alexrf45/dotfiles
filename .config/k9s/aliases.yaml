@@ -1,9 +1,99 @@
+# k9s aliases — type ':<alias>' in the command prompt to jump to a view.
+# Native CRD short names (e.g. :hr :ks :cnp :smon :ccnp) also work without aliases;
+# these add mnemonics for resources with no short name and group-qualify the
+# ambiguous ones (e.g. :cr stays clusterroles, :certr is a CertificateRequest).
 aliases:
+  # --- core workloads ---
   dp: deployments
-  sec: v1/secrets
+  rs: replicasets
+  sts: statefulsets
+  ds: daemonsets
   jo: jobs
+  cj: cronjobs
+  sec: v1/secrets
+  cm: configmaps
+  pvc: persistentvolumeclaims
+  pv: persistentvolumes
+  sc: storageclasses
+
+  # --- RBAC ---
   cr: clusterroles
   crb: clusterrolebindings
   ro: roles
   rb: rolebindings
+  sa: serviceaccounts
+
+  # --- networking (core + Gateway API) ---
   np: networkpolicies
+  gw: gateways.gateway.networking.k8s.io
+  gc: gatewayclasses.gateway.networking.k8s.io
+  rt: httproutes.gateway.networking.k8s.io
+  grt: grpcroutes.gateway.networking.k8s.io
+  rg: referencegrants.gateway.networking.k8s.io
+
+  # --- Cilium ---
+  cnp: ciliumnetworkpolicies.cilium.io
+  ccnp: ciliumclusterwidenetworkpolicies.cilium.io
+  cep: ciliumendpoints.cilium.io
+  cid: ciliumidentities.cilium.io
+  l2: ciliuml2announcementpolicies.cilium.io
+  lbpool: ciliumloadbalancerippools.cilium.io
+
+  # --- Flux ---
+  ks: kustomizations.kustomize.toolkit.fluxcd.io
+  hr: helmreleases.helm.toolkit.fluxcd.io
+  gitr: gitrepositories.source.toolkit.fluxcd.io
+  ocir: ocirepositories.source.toolkit.fluxcd.io
+  helmr: helmrepositories.source.toolkit.fluxcd.io
+  hc: helmcharts.source.toolkit.fluxcd.io
+
+  # --- cert-manager / trust-manager ---
+  cert: certificates.cert-manager.io
+  certr: certificaterequests.cert-manager.io
+  iss: issuers.cert-manager.io
+  ciss: clusterissuers.cert-manager.io
+  chal: challenges.acme.cert-manager.io
+  ord: orders.acme.cert-manager.io
+  bun: bundles.trust.cert-manager.io
+
+  # --- External Secrets / 1Password ---
+  es: externalsecrets.external-secrets.io
+  ces: clusterexternalsecrets.external-secrets.io
+  ss: secretstores.external-secrets.io
+  css: clustersecretstores.external-secrets.io
+  psec: pushsecrets.external-secrets.io
+  opi: onepassworditems.onepassword.com
+
+  # --- CloudNativePG (Postgres) ---
+  pg: clusters.postgresql.cnpg.io
+  cnpg: clusters.postgresql.cnpg.io
+  pgb: backups.postgresql.cnpg.io
+  pgsb: scheduledbackups.postgresql.cnpg.io
+  pgpool: poolers.postgresql.cnpg.io
+  pgdb: databases.postgresql.cnpg.io
+  obst: objectstores.barmancloud.cnpg.io
+
+  # --- Kyverno ---
+  cpol: clusterpolicies.kyverno.io
+  pol: policies.kyverno.io
+  polex: policyexceptions.kyverno.io
+  polr: policyreports.wgpolicyk8s.io
+  cpolr: clusterpolicyreports.wgpolicyk8s.io
+
+  # --- Observability (Prometheus Operator) ---
+  prom: prometheuses.monitoring.coreos.com
+  am: alertmanagers.monitoring.coreos.com
+  smon: servicemonitors.monitoring.coreos.com
+  pmon: podmonitors.monitoring.coreos.com
+  pr: prometheusrules.monitoring.coreos.com
+  prb: probes.monitoring.coreos.com
+  scfg: scrapeconfigs.monitoring.coreos.com
+
+  # --- Tailscale ---
+  tsc: connectors.tailscale.com
+  tspc: proxyclasses.tailscale.com
+  tspg: proxygroups.tailscale.com
+  tsdns: dnsconfigs.tailscale.com
+
+  # --- ExternalDNS ---
+  dnse: dnsendpoints.externaldns.k8s.io

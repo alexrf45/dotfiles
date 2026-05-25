@@ -1,0 +1,25 @@
+k9s:
+  cluster: memphis
+  namespace:
+    active: all
+    lockFavorites: false
+    favorites:
+      - all
+      - flux-system
+      - monitoring
+      - database
+      - cert-manager
+      - external-secrets
+      - networking
+      - tailscale
+      - kyverno
+      - authentik
+      - onepassword
+      - renovate
+      - storage
+      - default
+  view:
+    active: v1/pods all
+  featureGates:
+    nodeShell: false
+  proxy: null
