@@ -4,20 +4,15 @@ k9s:
     active: all
     lockFavorites: false
     favorites:
+      - default
+      - cert-manager
+      - renovate
+      - storage
       - all
       - flux-system
       - monitoring
       - database
-      - cert-manager
       - external-secrets
-      - networking
-      - tailscale
-      - kyverno
-      - authentik
-      - onepassword
-      - renovate
-      - storage
-      - default
   view:
     active: v1/pods all
   featureGates:
