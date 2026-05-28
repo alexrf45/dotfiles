@@ -4,13 +4,13 @@ k9s:
     active: all
     lockFavorites: false
     favorites:
-      - default
       - cert-manager
-      - renovate
       - storage
       - all
-      - flux-system
       - monitoring
+      - default
+      - renovate
+      - flux-system
       - database
       - external-secrets
   view:

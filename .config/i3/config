@@ -141,7 +141,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
-   position top
+   position bottom
    mode hide
    font pango:UbuntuMono Nerd Font 10
    height 17
