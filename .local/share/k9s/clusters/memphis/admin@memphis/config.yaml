@@ -14,7 +14,7 @@ k9s:
       - database
       - external-secrets
   view:
-    active: v1/pods all
+    active: v1/nodes
   featureGates:
     nodeShell: false
   proxy: null
