@@ -2,6 +2,47 @@ return {
   "renerocksai/telekasten.nvim",
   dependencies = { "nvim-telescope/telescope.nvim", "nvim-telekasten/calendar-vim" },
   config = function()
+    -- Escape % so titles like "100% uptime" are safe in gsub replacements.
+    local function esc(s)
+      return (s:gsub("%%", "%%%%"))
+    end
+
+    -- Create a timestamped note from a template.
+    -- opts: { label, dir, template, tag? }
+    -- When `tag` is set, the template's tag line is rewritten to that FLAP tag
+    -- (note.md's `- fleeting` or moc.md's inline `tags: []`) and any empty
+    -- `title:`/`uuid:`/`date:` frontmatter fields are filled in.
+    local function new_note(opts)
+      local title = vim.fn.input(opts.label .. " title: ")
+      if title == "" then
+        return
+      end
+      local uuid = os.date("%Y%m%d%H%M")
+      local rfc3339 = os.date("%Y-%m-%dT%H:%M:%SZ")
+      local dir = vim.fn.expand(opts.dir)
+      if vim.fn.isdirectory(dir) == 0 then
+        vim.fn.mkdir(dir, "p")
+      end
+      local path = dir .. uuid .. ".md"
+      local template = io.open(vim.fn.expand(opts.template), "r")
+      local content = template:read("*a")
+      template:close()
+      content = content:gsub("{{title}}", esc(title))
+      content = content:gsub("{{uuid}}", uuid)
+      content = content:gsub("{{rfc3339}}", rfc3339)
+      if opts.tag then
+        content = content:gsub("\ntitle: %[%]", "\ntitle: " .. esc(title))
+        content = content:gsub("\nuuid: %[%]", "\nuuid: " .. uuid)
+        content = content:gsub("\ndate: %[%]", "\ndate: " .. rfc3339)
+        content = content:gsub("\n  %- fleeting", "\n  - " .. opts.tag) -- note.md (multi-line tags)
+        content = content:gsub("\ntags: %[%]", "\ntags: [" .. opts.tag .. "]") -- moc.md (inline tags)
+      end
+      local out = io.open(path, "w")
+      out:write(content)
+      out:close()
+      vim.cmd("edit " .. path)
+    end
+
     require("telekasten").setup({
       journal_auto_open = true,
       command_palette_theme = "dropdown",
@@ -21,45 +62,48 @@ return {
       vim.keymap.set("n", "<leader>zd", "<cmd>Telekasten goto_today<CR>"),
       vim.keymap.set("n", "<leader>zw", "<cmd>Telekasten goto_thisweek<CR>"),
       vim.keymap.set("n", "<leader>zz", "<cmd>Telekasten follow_link<CR>"),
+      -- Fleeting capture lands in inbox/ — one place to process from.
       vim.keymap.set("n", "<leader>zn", function()
-        local title = vim.fn.input("Note title: ")
-        if title == "" then
-          return
-        end
-        local uuid = os.date("%Y%m%d%H%M")
-        local path = vim.fn.expand("~/fr3d/") .. uuid .. ".md"
-        local rfc3339 = os.date("%Y-%m-%dT%H:%M:%SZ")
-        local template = io.open(vim.fn.expand("~/fr3d/templates/note.md"), "r")
-        local content = template:read("*a")
-        template:close()
-        content = content:gsub("{{title}}", title)
-        content = content:gsub("{{uuid}}", uuid)
-        content = content:gsub("{{rfc3339}}", rfc3339)
-        local out = io.open(path, "w")
-        out:write(content)
-        out:close()
-        vim.cmd("edit " .. path)
-      end, { desc = "New inbox note" }),
+        new_note({
+          label = "Fleeting note",
+          dir = "~/fr3d/inbox/",
+          template = "~/fr3d/templates/note.md",
+          tag = "fleeting",
+        })
+      end, { desc = "New fleeting note (inbox)" }),
+      -- Permanent typed notes at vault root, tagged by FLAP lifecycle state.
+      vim.keymap.set("n", "<leader>zNa", function()
+        new_note({
+          label = "Atomic note",
+          dir = "~/fr3d/",
+          template = "~/fr3d/templates/note.md",
+          tag = "atomic",
+        })
+      end, { desc = "New atomic note" }),
+      vim.keymap.set("n", "<leader>zNl", function()
+        new_note({
+          label = "Literature note",
+          dir = "~/fr3d/",
+          template = "~/fr3d/templates/note.md",
+          tag = "literature",
+        })
+      end, { desc = "New literature note" }),
+      vim.keymap.set("n", "<leader>zNp", function()
+        new_note({
+          label = "Project MOC",
+          dir = "~/fr3d/",
+          template = "~/fr3d/templates/moc.md",
+          tag = "project",
+        })
+      end, { desc = "New project MOC" }),
       vim.keymap.set("n", "<leader>za", "<cmd>Telekasten new_templated_note<CR>"),
       vim.keymap.set("n", "<leader>zp", function()
-        local title = vim.fn.input("Poem title: ")
-        if title == "" then
-          return
-        end
-        local uuid = os.date("%Y%m%d%H%M")
-        local path = vim.fn.expand("~/fr3d/writing/") .. uuid .. ".md"
-        local rfc3339 = os.date("%Y-%m-%dT%H:%M:%SZ")
-        local template = io.open(vim.fn.expand("~/fr3d/templates/poem.md"), "r")
-        local content = template:read("*a")
-        template:close()
-        content = content:gsub("{{title}}", title)
-        content = content:gsub("{{uuid}}", uuid)
-        content = content:gsub("{{rfc3339}}", rfc3339)
-        local out = io.open(path, "w")
-        out:write(content)
-        out:close()
-        vim.cmd("edit " .. path)
-      end, { desc = "New poem note in inbox" }),
+        new_note({
+          label = "Poem",
+          dir = "~/fr3d/writing/",
+          template = "~/fr3d/templates/poem.md",
+        })
+      end, { desc = "New poem note" }),
       vim.keymap.set("n", "<leader>zc", "<cmd>Telekasten show_calendar<CR>"),
       vim.keymap.set("n", "<leader>zb", "<cmd>Telekasten show_backlinks<CR>"),
       vim.keymap.set("n", "<leader>zt", function()
