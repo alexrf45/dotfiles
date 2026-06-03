@@ -1,11 +1,6 @@
-# "cmd" — classic Windows command prompt: plain white on pure black.
-# Mirrors the structure of matrix.toml / kali.toml. Switch in via the
-# `import` line in alacritty.toml. Pairs with Neovim colors/cmd.lua.
-# The 16 ANSI entries are the canonical Windows console palette.
-
 [colors.primary]
 background = "#000000"
-foreground = "#C0C0C0"
+foreground = "#71797E"
 
 [colors.cursor]
 cursor = "#FFFFFF"
@@ -17,20 +12,20 @@ text       = "#000000"
 
 [colors.normal]
 black   = "#000000"
-red     = "#CC0000"
+red     = "#FF2400"
 green   = "#808080"
-yellow  = "#808000"
+yellow  = "#FBEC5D"
 blue    = "#C0C0C0"
-magenta = "#800080"
-cyan    = "#008080"
+magenta = "#787878"
+cyan    = "#C3D1EB"
 white   = "#C0C0C0"
 
 [colors.bright]
 black   = "#808080"
-red     = "#FF0000"
+red     = "#FF2400"
 green   = "#808080"
-yellow  = "#FFFF00"
+yellow  = "#FBEC5D"
 blue    = "#0000FF"
-magenta = "#FF00FF"
-cyan    = "#00FFFF"
+magenta = "#787878"
+cyan    = "#C3D1EB"
 white   = "#FFFFFF"
