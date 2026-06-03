@@ -121,7 +121,7 @@ mods = "Shift"
 [general]
 import = [
 
-  "~/.config/alacritty/kali.toml" ]
+  "~/.config/alacritty/cmd.toml" ]
 [terminal]
 
 

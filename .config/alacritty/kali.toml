@@ -1,0 +1,32 @@
+# Kali Linux default terminal palette
+# Source: kali-themes package (gitlab.com/kalilinux/packages/kali-themes)
+#   ANSI 16  → share/xfce4/terminal/colorschemes/Kali.theme
+#   bg/fg/UI → share/color-schemes/KaliDark.colors
+
+[colors.primary]
+background = "#23252E"
+foreground = "#FFFFFF"
+
+[colors.selection]
+background = "#2777FF"
+text       = "#FFFFFF"
+
+[colors.normal]
+black   = "#1F2229"
+red     = "#D41919"
+green   = "#5EBDAB"
+yellow  = "#FEA44C"
+blue    = "#367BF0"
+magenta = "#9755B3"
+cyan    = "#49AEE6"
+white   = "#E6E6E6"
+
+[colors.bright]
+black   = "#198388"
+red     = "#EC0101"
+green   = "#47D4B9"
+yellow  = "#FF8A18"
+blue    = "#277FFF"
+magenta = "#962AC3"
+cyan    = "#05A1F7"
+white   = "#FFFFFF"
