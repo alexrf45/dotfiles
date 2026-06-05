@@ -1,4 +1,4 @@
- #zmodload zsh/zprof
+#zmodload zsh/zprof
 
 setopt AUTO_CD
 setopt AUTO_PUSHD
@@ -17,11 +17,6 @@ unsetopt beep
 setopt HIST_IGNORE_SPACE
 
 
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-#zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ffffff,standout"
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="10"
@@ -40,40 +35,40 @@ for file in $HOME/.zsh/*; do
     source "$file"
 done
 
-
 add-zsh-hook chpwd auto_venv
 
 autoload -Uz colors; colors
 autoload -Uz compinit && compinit
 
-source "$HOME/.miniplug/plugins/miniplug.zsh"
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-miniplug plugin 'zsh-users/zsh-syntax-highlighting'
-miniplug plugin 'zsh-users/zsh-autosuggestions'
-miniplug plugin 'zsh-users/zsh-completions'
-miniplug theme 'dracula/zsh'
-miniplug load
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
 
-fpath=($HOME/.miniplug/plugins/zsh-users/zsh-completions/src $fpath)
+# Configure Git tracking details
+zstyle ':vcs_info:git:*' formats '%F{13} %b%f '
+PROMPT=$'%{\e[38;5;240m%}%~%{\e[38;5;255m%} // %{\e[38;5;120m%}$(git branch 2>/dev/null | grep \'^*\' | colrm 1 2 | xargs -I{} echo " git:({})") %{\e[38;5;255m%}$ %{\e[0m%}'
 
+export PS1
 source <(kubectl completion zsh)
 source <(scrt completion zsh)
-
 
 . "$HOME/.cargo/env"
 
 eval "$(fzf --zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-. <(flux completion zsh)
-
 eval "$(zoxide init zsh)"
-
-#eval "$(starship init zsh)"
 
 source "/home/fr3d/.config/op/plugins.sh"
 
-#zprof > /tmp/zprof.out
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 export PATH="/home/fr3d/.devcontainers/bin:$PATH"
+
+#zprof > /tmp/zprof.out

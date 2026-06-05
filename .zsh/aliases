@@ -16,6 +16,7 @@ alias ls="ls -h --color=auto --group-directories-first"
 alias la="ls -lah --color=auto --group-directories-first"
 alias lsblk="lsblk | bat -l conf -p"
 alias sensors="sensors | bat -l cpuinfo -p"
+alias www="scrt serve --addr localhost:8000 --cert ~/.local/certs/cert.pem --key ~/.local/certs/key.pem --token $1"
 #notes
 alias daily='bash $HOME/.config/scripts/daily.sh'
 alias web='bash $HOME/.config/scripts/firefox-esr.sh'
@@ -61,9 +62,3 @@ alias py-virt='python3 -m venv ./venv && source ./venv/bin/activate'
 alias freeze='pip freeze > requirements.txt'
 alias py-install='pip install -r requirements.txt'
 alias py-list='pipx list | grep package'
-
-#starship
-alias yeskube="sed -i '/^\[kubernetes\]$/,/^\[/{s/^disabled = true/disabled = false/;}' ~/.config/starship.toml"
-alias nokube="sed -i '/^\[kubernetes\]$/,/^\[/{s/^disabled = false/disabled = true/;}' ~/.config/starship.toml"
-
-

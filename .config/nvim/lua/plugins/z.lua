@@ -44,23 +44,16 @@ return {
     end
 
     require("telekasten").setup({
-      journal_auto_open = true,
       command_palette_theme = "dropdown",
       show_tags_theme = "dropdown",
       tag_notation = "yaml-bare",
       home = vim.fn.expand("~/fr3d"),
-      dailies = vim.fn.expand("~/fr3d/daily"),
-      weeklies = vim.fn.expand("~/fr3d/week"),
       templates = vim.fn.expand("~/fr3d/templates"),
       template_new_note = vim.fn.expand("~/fr3d/templates/note.md"),
-      template_new_daily = vim.fn.expand("~/fr3d/templates/daily.md"),
-      template_new_weekly = vim.fn.expand("~/fr3d/templates/weekly.md"),
       image_subdir = vim.fn.expand("~/fr3d/media/images"),
       vim.keymap.set("n", "<leader>z", "<cmd>Telekasten panel<CR>"),
       vim.keymap.set("n", "<leader>zf", "<cmd>Telekasten find_notes<CR>"),
       vim.keymap.set("n", "<leader>zs", "<cmd>Telekasten search_notes<CR>"),
-      vim.keymap.set("n", "<leader>zd", "<cmd>Telekasten goto_today<CR>"),
-      vim.keymap.set("n", "<leader>zw", "<cmd>Telekasten goto_thisweek<CR>"),
       vim.keymap.set("n", "<leader>zz", "<cmd>Telekasten follow_link<CR>"),
       -- Fleeting capture lands in inbox/ — one place to process from.
       vim.keymap.set("n", "<leader>zn", function()

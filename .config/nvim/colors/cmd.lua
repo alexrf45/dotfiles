@@ -1,9 +1,4 @@
 -- cmd.lua — classic Windows command prompt: plain white on pure black.
--- Aesthetic: restrained, near-monochrome. White text on a black void with
--- the canonical Windows console palette used sparingly for syntax so it
--- stays readable without being loud.
--- Mirrors the structure of colors/matrix.lua / colors/kali.lua so the
--- schemes stay swappable.
 vim.opt.termguicolors = true
 vim.cmd("highlight clear")
 vim.g.colors_name = "cmd"
@@ -15,7 +10,7 @@ local c = {
   black = "#000000",
   red = "#CC0000", -- vivid red — errors / prompt accent (matches terminal)
   green = "#8A9A5B", -- dark green — strings
-  yellow = "#808000", -- dark yellow / olive — numbers
+  yellow = "#FBFCB8", -- dark yellow / olive — numbers
   blue = "#000080", -- navy
   magenta = "#800080", -- dark magenta
   cyan = "#E5E4E2", -- teal — constants
