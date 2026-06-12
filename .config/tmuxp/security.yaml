@@ -16,4 +16,8 @@ windows:
     layout: tiled
     panes:
       - htb
+  - window_name: lab
+    layout: tiled
+    panes:
+      - cd ~/th0th/
 

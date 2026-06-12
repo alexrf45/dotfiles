@@ -7,6 +7,17 @@ return {
       return (s:gsub("%%", "%%%%"))
     end
 
+    -- Turn a human title into a filename slug: lowercase, non-alphanumeric runs
+    -- collapsed to a single hyphen, trimmed, capped at ~50 chars on a word
+    -- boundary. Used so notes are named `{uuid}-{slug}.md` for legibility.
+    local function slugify(title)
+      local s = title:lower():gsub("[^a-z0-9]+", "-"):gsub("^%-+", ""):gsub("%-+$", "")
+      if #s > 50 then
+        s = s:sub(1, 50):gsub("%-[^%-]*$", "")
+      end
+      return s
+    end
+
     -- Create a timestamped note from a template.
     -- opts: { label, dir, template, tag? }
     -- When `tag` is set, the template's tag line is rewritten to that FLAP tag
@@ -23,7 +34,9 @@ return {
       if vim.fn.isdirectory(dir) == 0 then
         vim.fn.mkdir(dir, "p")
       end
-      local path = dir .. uuid .. ".md"
+      local slug = slugify(title)
+      local base = slug ~= "" and (uuid .. "-" .. slug) or uuid
+      local path = dir .. base .. ".md"
       local template = io.open(vim.fn.expand(opts.template), "r")
       local content = template:read("*a")
       template:close()
@@ -50,6 +63,8 @@ return {
       home = vim.fn.expand("~/fr3d"),
       templates = vim.fn.expand("~/fr3d/templates"),
       template_new_note = vim.fn.expand("~/fr3d/templates/note.md"),
+      dailies = vim.fn.expand("~/fr3d/daily"),
+      template_new_daily = vim.fn.expand("~/fr3d/templates/daily.md"),
       image_subdir = vim.fn.expand("~/fr3d/media/images"),
       vim.keymap.set("n", "<leader>z", "<cmd>Telekasten panel<CR>"),
       vim.keymap.set("n", "<leader>zf", "<cmd>Telekasten find_notes<CR>"),
@@ -97,6 +112,8 @@ return {
           template = "~/fr3d/templates/poem.md",
         })
       end, { desc = "New poem note" }),
+      -- Daily note in daily/YYYY-MM-DD.md (3 tasks + a Log) from templates/daily.md.
+      vim.keymap.set("n", "<leader>zd", "<cmd>Telekasten goto_today<CR>", { desc = "Daily note (today)" }),
       vim.keymap.set("n", "<leader>zc", "<cmd>Telekasten show_calendar<CR>"),
       vim.keymap.set("n", "<leader>zb", "<cmd>Telekasten show_backlinks<CR>"),
       vim.keymap.set("n", "<leader>zt", function()
