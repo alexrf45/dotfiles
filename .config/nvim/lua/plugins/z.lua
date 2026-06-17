@@ -19,10 +19,7 @@ return {
     end
 
     -- Create a timestamped note from a template.
-    -- opts: { label, dir, template, tag? }
-    -- When `tag` is set, the template's tag line is rewritten to that FLAP tag
-    -- (note.md's `- fleeting` or moc.md's inline `tags: []`) and any empty
-    -- `title:`/`uuid:`/`date:` frontmatter fields are filled in.
+    -- opts: { label, dir, template }
     local function new_note(opts)
       local title = vim.fn.input(opts.label .. " title: ")
       if title == "" then
@@ -43,13 +40,6 @@ return {
       content = content:gsub("{{title}}", esc(title))
       content = content:gsub("{{uuid}}", uuid)
       content = content:gsub("{{rfc3339}}", rfc3339)
-      if opts.tag then
-        content = content:gsub("\ntitle: %[%]", "\ntitle: " .. esc(title))
-        content = content:gsub("\nuuid: %[%]", "\nuuid: " .. uuid)
-        content = content:gsub("\ndate: %[%]", "\ndate: " .. rfc3339)
-        content = content:gsub("\n  %- fleeting", "\n  - " .. opts.tag) -- note.md (multi-line tags)
-        content = content:gsub("\ntags: %[%]", "\ntags: [" .. opts.tag .. "]") -- moc.md (inline tags)
-      end
       local out = io.open(path, "w")
       out:write(content)
       out:close()
@@ -70,40 +60,22 @@ return {
       vim.keymap.set("n", "<leader>zf", "<cmd>Telekasten find_notes<CR>"),
       vim.keymap.set("n", "<leader>zs", "<cmd>Telekasten search_notes<CR>"),
       vim.keymap.set("n", "<leader>zz", "<cmd>Telekasten follow_link<CR>"),
-      -- Fleeting capture lands in inbox/ — one place to process from.
+      -- New note at vault root.
       vim.keymap.set("n", "<leader>zn", function()
         new_note({
-          label = "Fleeting note",
+          label = "New note",
+          dir = "~/fr3d/",
+          template = "~/fr3d/templates/note.md",
+        })
+      end, { desc = "New note (root)" }),
+      -- Quick capture to inbox/ — rename or leave as-is.
+      vim.keymap.set("n", "<leader>zi", function()
+        new_note({
+          label = "Inbox note",
           dir = "~/fr3d/inbox/",
           template = "~/fr3d/templates/note.md",
-          tag = "fleeting",
         })
-      end, { desc = "New fleeting note (inbox)" }),
-      -- Permanent typed notes at vault root, tagged by FLAP lifecycle state.
-      vim.keymap.set("n", "<leader>zNa", function()
-        new_note({
-          label = "Atomic note",
-          dir = "~/fr3d/",
-          template = "~/fr3d/templates/note.md",
-          tag = "atomic",
-        })
-      end, { desc = "New atomic note" }),
-      vim.keymap.set("n", "<leader>zNl", function()
-        new_note({
-          label = "Literature note",
-          dir = "~/fr3d/",
-          template = "~/fr3d/templates/note.md",
-          tag = "literature",
-        })
-      end, { desc = "New literature note" }),
-      vim.keymap.set("n", "<leader>zNp", function()
-        new_note({
-          label = "Project MOC",
-          dir = "~/fr3d/",
-          template = "~/fr3d/templates/moc.md",
-          tag = "project",
-        })
-      end, { desc = "New project MOC" }),
+      end, { desc = "New inbox note" }),
       vim.keymap.set("n", "<leader>za", "<cmd>Telekasten new_templated_note<CR>"),
       vim.keymap.set("n", "<leader>zp", function()
         new_note({
@@ -111,8 +83,8 @@ return {
           dir = "~/fr3d/writing/",
           template = "~/fr3d/templates/poem.md",
         })
-      end, { desc = "New poem note" }),
-      -- Daily note in daily/YYYY-MM-DD.md (3 tasks + a Log) from templates/daily.md.
+      end, { desc = "New poem" }),
+      -- Daily note in daily/YYYY-MM-DD.md (tasks + Log) from templates/daily.md.
       vim.keymap.set("n", "<leader>zd", "<cmd>Telekasten goto_today<CR>", { desc = "Daily note (today)" }),
       vim.keymap.set("n", "<leader>zc", "<cmd>Telekasten show_calendar<CR>"),
       vim.keymap.set("n", "<leader>zb", "<cmd>Telekasten show_backlinks<CR>"),

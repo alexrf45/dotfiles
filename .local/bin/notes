@@ -1,0 +1,184 @@
+#!/usr/bin/env bash
+# notes — CLI for the fr3d vault
+# Usage: notes <command> [args]
+
+VAULT="${NOTES_VAULT:-$HOME/fr3d}"
+EDITOR="${EDITOR:-nvim}"
+
+_uuid()  { date +"%Y%m%d%H%M"; }
+_rfc()   { date -u +"%Y-%m-%dT%H:%M:%SZ"; }
+_today() { date +"%Y-%m-%d"; }
+
+_slugify() {
+  local s
+  s=$(echo "$1" | tr '[:upper:]' '[:lower:]' | tr -cs 'a-z0-9' '-' | sed 's/^-//;s/-$//')
+  echo "${s:0:50}" | sed 's/-[^-]*$//'
+}
+
+_new_at() {
+  local dir="$1"
+  local title="$2"
+  local uuid rfc slug path
+  uuid=$(_uuid)
+  rfc=$(_rfc)
+  if [[ -z "$title" ]]; then
+    read -r -p "Title: " title
+    [[ -z "$title" ]] && echo "Aborted." && return 1
+  fi
+  slug=$(_slugify "$title")
+  [[ -n "$slug" ]] && path="$dir/${uuid}-${slug}.md" || path="$dir/${uuid}.md"
+  mkdir -p "$dir"
+  cat > "$path" <<EOF
+---
+title: $title
+date: $rfc
+tags: []
+---
+
+# $title
+
+EOF
+  "$EDITOR" "$path"
+}
+
+cmd_new() {
+  _new_at "$VAULT" "$*"
+}
+
+cmd_inbox() {
+  if [[ $# -gt 0 ]]; then
+    _new_at "$VAULT/inbox" "$*"
+  else
+    # List inbox notes with their titles
+    local f title
+    for f in "$VAULT"/inbox/*.md; do
+      [[ -f "$f" ]] || continue
+      title=$(grep -m1 '^title:' "$f" | sed 's/^title: *//')
+      printf "%-45s  %s\n" "$(basename "$f")" "${title:-(no title)}"
+    done
+  fi
+}
+
+cmd_daily() {
+  local today path
+  today=$(_today)
+  path="$VAULT/daily/${today}.md"
+  if [[ ! -f "$path" ]]; then
+    cat > "$path" <<EOF
+---
+title: $today
+date: $today
+tags: [daily]
+---
+
+## Tasks
+- [ ]
+
+## Log
+
+EOF
+  fi
+  "$EDITOR" "$path"
+}
+
+cmd_find() {
+  local query="$*"
+  if command -v fzf &>/dev/null; then
+    rg --files "$VAULT" --glob '*.md' | \
+      fzf --query "$query" \
+          --preview 'head -20 {}' \
+          --preview-window=right:50% | \
+      xargs -r "$EDITOR"
+  else
+    rg --files "$VAULT" --glob '*.md'
+  fi
+}
+
+cmd_search() {
+  local query="$*"
+  if [[ -z "$query" ]]; then
+    echo "Usage: notes search <query>" && return 1
+  fi
+  if command -v fzf &>/dev/null; then
+    rg --line-number --no-heading "$query" "$VAULT" --glob '*.md' | \
+      fzf --delimiter ':' \
+          --preview 'bat --color=always --highlight-line {2} {1} 2>/dev/null || head -30 {1}' \
+          --preview-window=right:50% | \
+      awk -F: '{print $1}' | \
+      xargs -r "$EDITOR"
+  else
+    rg -n "$query" "$VAULT" --glob '*.md'
+  fi
+}
+
+cmd_tag() {
+  local tag="$1"
+  if [[ -z "$tag" ]]; then
+    echo "Usage: notes tag <tag>" && return 1
+  fi
+  # Match both inline (tags: [foo, bar]) and multi-line (  - foo) frontmatter
+  rg -l "tags:.*\b${tag}\b" "$VAULT" --glob '*.md' 2>/dev/null | sort | while read -r f; do
+    local title
+    title=$(grep -m1 '^title:' "$f" | sed 's/^title: *//')
+    printf "%-50s  %s\n" "$(basename "$f")" "${title:-(no title)}"
+  done
+}
+
+cmd_stats() {
+  # Parse only the YAML frontmatter block of each .md file with awk,
+  # then extract tags from both inline (tags: [a, b]) and multi-line (  - a) forms.
+  find "$VAULT" -name '*.md' -not -path '*/templates/*' 2>/dev/null | \
+    xargs awk '
+      FNR == 1 { in_fm = (/^---$/) ? 1 : 0; next }
+      /^---$/ { in_fm = 0; next }
+      !in_fm  { next }
+      /^tags:[ \t]*\[/ {
+        s = $0
+        sub(/^tags:[ \t]*\[/, "", s)
+        sub(/\].*/, "", s)
+        n = split(s, a, /,[ \t]*/)
+        for (i = 1; i <= n; i++) {
+          gsub(/^[ \t]+|[ \t]+$/, "", a[i])
+          if (a[i] != "") print a[i]
+        }
+      }
+      /^[ \t]+-[ \t]+[a-z][a-z0-9_-]+[ \t]*$/ {
+        s = $0
+        gsub(/^[ \t]+-[ \t]+|[ \t]+$/, "", s)
+        if (s != "") print s
+      }
+    ' 2>/dev/null | sort | uniq -c | sort -rn | \
+    awk 'BEGIN{printf "%-8s %s\n","COUNT","TAG"; printf "%-8s %s\n","-----","---"} \
+         {printf "%-8s %s\n",$1,$2}'
+}
+
+cmd_help() {
+  cat <<EOF
+notes — fr3d vault CLI
+
+Commands:
+  new  [title]     Create a note at vault root (opens \$EDITOR)
+  inbox [title]    Create a note in inbox/, or list inbox notes if no title
+  daily            Open today's daily note (creates if missing)
+  find  [query]    Fuzzy-find notes by filename (fzf)
+  search <query>   Fuzzy-search notes by content (rg + fzf)
+  tag   <tag>      List notes tagged with <tag>
+  stats            Show tag frequency table
+
+Environment:
+  NOTES_VAULT      Path to vault (default: ~/fr3d)
+  EDITOR           Editor to open notes (default: nvim)
+EOF
+}
+
+case "${1:-help}" in
+  new)    shift; cmd_new    "$@" ;;
+  inbox)  shift; cmd_inbox  "$@" ;;
+  daily)        cmd_daily        ;;
+  find)   shift; cmd_find   "$@" ;;
+  search) shift; cmd_search "$@" ;;
+  tag)    shift; cmd_tag    "$@" ;;
+  stats)        cmd_stats        ;;
+  help|--help|-h) cmd_help       ;;
+  *)      echo "Unknown command: $1. Run 'notes help'." && exit 1 ;;
+esac
