@@ -1,33 +1,27 @@
-#zmodload zsh/zprof
-
-setopt AUTO_CD
-setopt AUTO_PUSHD
-setopt EXTENDED_GLOB
-setopt EXTENDED_HISTORY
-setopt NOMATCH
-setopt MENU_COMPLETE
-setopt GLOB_DOTS
-setopt INTERACTIVE_COMMENTS
-setopt HIST_IGNORE_DUPS # Don't save duplicate lines
-setopt HIST_VERIFY
-setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY      # Share history between sessions
-setopt PROMPT_SUBST
-unsetopt beep
-setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_DUPS # Don't save duplicate lines
+setopt EXTENDED_HISTORY
+export ZSH="$HOME/.oh-my-zsh"
 
+ZSH_THEME="robbyrussell"
 
+zstyle ':omz:update' mode auto      # update automatically without asking
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ffffff,standout"
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="10"
-ZSH_AUTOSUGGEST_USE_ASYNC=1
+zstyle ':omz:update' frequency 7
 
-autoload -Uz edit-command-line
-zle -N edit-command-line
-bindkey '^X^E' edit-command-line
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-autoload -Uz add-zsh-hook
+HIST_STAMPS="mm/dd/yyyy"
 
+plugins=(
+  colorize
+  git
+  tailscale
+  themes
+  web-search
+)
+
+source $ZSH/oh-my-zsh.sh
 
 source "$HOME/.zprofile"
 
@@ -35,28 +29,11 @@ for file in $HOME/.zsh/*; do
     source "$file"
 done
 
-add-zsh-hook chpwd auto_venv
-
-autoload -Uz colors; colors
-autoload -Uz compinit && compinit
-
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-
-autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
-setopt prompt_subst
-
-# Configure Git tracking details
-zstyle ':vcs_info:git:*' formats '%F{13} %b%f '
-PROMPT=$'%{\e[38;5;240m%}%~%{\e[38;5;255m%} // %{\e[38;5;120m%}$(git branch 2>/dev/null | grep \'^*\' | colrm 1 2 | xargs -I{} echo " git:({})") %{\e[38;5;255m%}$ %{\e[0m%}'
-
-export PS1
-source <(kubectl completion zsh)
-source <(scrt completion zsh)
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 . "$HOME/.cargo/env"
 
@@ -71,4 +48,3 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 export PATH="/home/fr3d/.devcontainers/bin:$PATH"
 
-#zprof > /tmp/zprof.out
