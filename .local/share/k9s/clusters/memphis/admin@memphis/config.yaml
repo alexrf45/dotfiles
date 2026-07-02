@@ -4,15 +4,15 @@ k9s:
     active: all
     lockFavorites: false
     favorites:
-      - cert-manager
-      - storage
       - all
-      - monitoring
-      - default
+      - storage
+      - cert-manager
       - renovate
+      - freshrss
+      - default
       - flux-system
+      - monitoring
       - database
-      - external-secrets
   view:
     active: v1/nodes
   featureGates:

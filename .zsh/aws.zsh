@@ -5,7 +5,7 @@ alias vpc-check='aws ec2 --output text --query "Vpcs[*].{VpcId:VpcId,Name:Tags[?
 alias s3-delete='aws s3api delete-bucket --bucket ${BUCKET}'
 alias iam-access-id-admin='aws iam get-user --user-name account-admin | jq -r ".User | .UserId"'
 #cloud-nuke aws
-alias aws-nuke='cloud-nuke aws --exclude-resource-type s3 --exclude-resource-type iam --exclude-resource-type secretsmanager --exclude-resource-type dynamodb'
+alias aws-nuke='cloud-nuke aws --exclude-resource-type s3 --exclude-resource-type iam  '
 alias aws-inspect='cloud-nuke inspect-aws'
 
 alias aws-services-list='~/.config/scripts/./services.sh'
